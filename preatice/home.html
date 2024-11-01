@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>home page</title>
+</head>
+<script src="jquery-3.5.1.min.js"></script>
+<script src="valid.js"></script>
+<script>
+  function log(){
+    var value = confirm("are you sure ?");
+    if(value){
+      window.location.href="log.html";
+    }
+  }
+  
+  var emp=[{
+    "id":"1",
+    "name":"bhavesh",
+    "image":"/preatice/1110014.jpg"
+  },{
+    "id":"2",
+    "name":"bhavesh2",
+    "image":"/preatice/ Logo.png"
+  }
+  
+  ];
+ $(document).ready(function(){
+   var output ="";
+   for(let i of emp){
+     output+=`<p>empid:${i.id}</p><p>name:${i.name}</p><a href="#"><img src="${i.image}"></a><hr>`
+   }
+   //document.querySelector(".div").innerHTML=output;
+   document.getElementById("div").innerHTML=output;
+ });
+ 
+ 
+</script>
+<style>
+  a{
+    text-decoration: none;
+    color: red;
+    margin-left: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    height: 20px;
+   
+  }
+  header{
+    background-color: yellow;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    height: 50px;
+    width: 100%;
+    border-radius: 10px;
+  }
+  #div1{
+    color: red;
+    text-transform: uppercase;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+    #div2{
+    color: red;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+  h1{
+    text-transform: uppercase;
+    color: red;
+  }
+  p{
+    color: red;
+  }
+  img{
+    height: 100px;
+    width: 100%;
+    background-repeat: no-repeat;
+  }
+
+</style>
+<body>
+<header>
+  <div id="div1">
+    <p>mypage</p>
+  </div>
+  <div id="div2">
+    <a href="#">home</a>
+     <a href="#">about</a>
+      <a href="#">services</a>
+       <a href="#" onclick="log()">log-out</a>
+  </div>
+</header>
+<center><b><h1>employees details</h1></b></center>
+<div id="div"></div>
+<a href="tel:">call</a>
+<a href="mailto:">email</a>
+</body>
+</html>

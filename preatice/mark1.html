@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>AngularJS Form Validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body ng-controller="myController">
+    <h1>AngularJS Form Validation</h1>
+    <form name="userForm" ng-submit="submitForm()" novalidate>
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" ng-model="user.name" required>
+            <span class="error" ng-show="userForm.name.$dirty && userForm.name.$invalid">Name is required.</span>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" ng-model="user.email" required>
+            <span class="error" ng-show="userForm.email.$dirty && userForm.email.$invalid">Valid email is required.</span>
+        </div>
+
+        <div>
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" ng-model="user.gender" required>
+                <option value="">Select</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <span class="error" ng-show="userForm.gender.$dirty && userForm.gender.$invalid">Please select your gender.</span>
+        </div>
+
+        <div>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" ng-model="user.address" required></textarea>
+            <span class="error" ng-show="userForm.address.$dirty && userForm.address.$invalid">Address is required.</span>
+        </div>
+
+        <div>
+            <label for="mobile">Mobile No:</label>
+            <input type="tel" id="mobile" name="mobile" ng-model="user.mobile" required>
+            <span class="error" ng-show="userForm.mobile.$dirty && userForm.mobile.$invalid">Valid mobile number is required.</span>
+        </div>
+
+        <button type="submit" ng-disabled="userForm.$invalid">Submit</button>
+    </form>
+
+    <div ng-if="submitted">
+        <h2>Submitted Data</h2>
+        <p>Name: {{ user.name }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Gender: {{ user.gender }}</p>
+        <p>Address: {{ user.address }}</p>
+        <p>Mobile No: {{ user.mobile }}</p>
+    </div>
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myController', function($scope) {
+            $scope.user = {};
+            $scope.submitted = false;
+
+            $scope.submitForm = function() {
+                if ($scope.userForm.$valid) {
+                    $scope.submitted = true;
+                }
+            };
+        });
+    </script>
+</body>
+</html>

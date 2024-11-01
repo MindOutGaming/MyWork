@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DataTable-Example</title>
+</head>
+<link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+<style>
+  h2{
+    color: red;
+   font-style: italic;
+   text-transform: uppercase;
+  }
+  table{
+    border-color: red;
+    box-shadow: 4px 4px 4px;
+  }
+  th{
+    text-transform: uppercase;
+    font-style: italic;
+    color: red;
+  }
+  td{
+    border-color: yellow;
+  }
+  hr{
+    border: 1px solid blue;
+  }
+</style>
+<body>
+ <center><hr><h2>employees details</h2></center><hr>
+<table id="myTable" border="4">
+  
+  <thead>
+    <tr>
+    
+    <th>id</th>
+    <th>name</th>
+    <th>salary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>babu bhaiya</td>
+      <td>10000</td>
+    </tr>   <tr>
+      <td>2</td>
+      <td>nakul</td>
+      <td>11000</td>
+    </tr>   <tr>
+      <td>3</td>
+      <td>raju</td>
+      <td>10001</td>
+    </tr>   <tr>
+      <td>4</td>
+      <td>aryan</td>
+      <td>10000</td>
+    </tr>   <tr>
+      <td>5</td>
+      <td>syam</td>
+      <td>12000</td>
+    </tr>   <tr>
+      <td>6</td>
+      <td>vishal</td>
+      <td>10000</td>
+    </tr>   <tr>
+      <td>7</td>
+      <td>anu radh</td>
+      <td>10050</td>
+    </tr>   <tr>
+      <td>8</td>
+      <td>kuldeep</td>
+      <td>10500</td>
+    </tr>   <tr>
+      <td>9</td>
+      <td>kacharaseth</td>
+      <td>15000</td>
+    </tr>   <tr>
+      <td>10</td>
+      <td>kuldip</td>
+      <td>13000</td>
+    </tr>   <tr>
+      <td>11</td>
+      <td>tivariseth</td>
+      <td>16000</td>
+    </tr>   <tr>
+      <td>12</td>
+      <td>niraj</td>
+      <td>10000</td>
+    </tr>   <tr>
+      <td>13</td>
+      <td>rdj</td>
+      <td>1000</td>
+    </tr>   <tr>
+      <td>14</td>
+      <td>simran</td>
+      <td>9000</td>
+    </tr>   <tr>
+      <td>15</td>
+      <td>bhavesh</td>
+      <td>17000</td>
+    </tr>   <tr>
+      <td>16</td>
+      <td>raj</td>
+      <td>17000</td>
+    </tr>   <tr>
+      <td>17</td>
+      <td>shaizan</td>
+      <td>1000</td>
+    </tr>   <tr>
+      <td>18</td>
+      <td>pavan</td>
+      <td>10000</td>
+    </tr>
+     <tr>
+      <td>19</td>
+      <td>mindout</td>
+      <td>100000</td>
+    </tr>
+  </tbody>
+     
+</table>
+<hr>
+<script src="/preatice/jquery-3.5.1.min.js"></script>
+<script src="//cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+<script>
+  let table = new DataTable('#myTable');
+</script>
+
+</body>
+
+</html>

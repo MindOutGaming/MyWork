@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body{
+    display: flex;
+    justify-content: center;
+  }
+    .big{
+     
+      width: 335px;
+      border-radius: 10px;
+      background-color: background: rgb(5, 239, 57);
+      background: linear-gradient(90deg, rgba(5, 239, 57, 0.823952161348783) 6%, rgba(0, 112, 255, 0.8581085694141877) 51%, rgba(0, 0, 0, 0.8645129081530449) 91%);
+    }
+    .head{
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      background-color: background: rgb(5, 239, 57);
+      background: linear-gradient(90deg, rgba(5, 239, 57, 0.823952161348783) 6%, rgba(0, 112, 255, 0.8581085694141877) 51%, rgba(0, 0, 0, 0.8645129081530449) 91%);;
+      text-transform: uppercase;
+    }
+    h2{
+      margin-left: 10px;
+    }
+    i{
+      margin-top: 25px;
+      margin-right: 10px;
+      color: lime;
+      font-size: 1.5rem;
+    }
+    input{
+      height: 40px;
+      width: 329px;
+      font-size: 1.5rem;
+      font-family:bold;
+      text-transform: uppercase;
+    }
+    input:focus{
+    border: 5px solid blue;
+    }
+    ul{
+      list-style-type: none;
+      text-transform: uppercase;
+    }
+    li{
+      font-size: 1.5rem;
+      width: 250px;
+      border-radius: 10px;
+    }
+    li:nth-child(2n) {
+      background-color: lightskyblue;
+    }
+    
+    .toggle{
+      display: none;
+    }
+    .co{
+      text-decoration: line-through;
+    }
+   
+  </style>
+  <title>todo list</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+<div class="big">
+  <div class="head">
+    <h2>todo list</h2>
+    <i class="fa-solid fa-circle-xmark" id="i"></i>
+  </div>
+  
+  <input type="text" placeholder="enter the text" id="input">
+  <ul id="ul">
+    <li>cricket</li>
+    <li>footboll</li>
+    <li>hockey</li>
+  </ul>
+</div>
+</body>
+<script>
+  i=document.getElementById("i");
+  input=document.getElementById("input");
+  li=document.getElementById("li");
+  ul=document.getElementById("ul");
+  i.addEventListener('click',clicked);
+  function clicked(event){
+    input.classList.toggle("toggle");
+  }
+  //li add event//
+  input.addEventListener('keydown',addli);
+  function addli(event){
+    if(event.keyCode===13){
+      newli = document.createElement("li");
+      text = document.createTextNode(input.value);
+      newli.append(text);
+      ul.appendChild(newli);
+      input.value="";
+     
+      
+  }
+    }
+    
+  ul.addEventListener('click',zo)
+  function zo(event){
+    newa=event.target;
+    newa.classList.toggle('co');
+  }
+  
+ 
+</script>
+</html>

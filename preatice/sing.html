@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sign-up page</title>
+</head>
+<script src="jquery-3.5.1.min.js"></script>
+<script src="valid.js"></script>
+<script>
+function mysing(){
+var result = valid("#username","username") && valid("#email","email") && valid("#password","password") && valid("#cpassword","c-password");
+if(result){
+  var pass = $("#password").val();
+var cpass = $("#cpassword").val();
+  if(pass===cpass){
+  window.location.href="/preatice/log.html";
+ 
+  }else{
+    alert("re-enter password!");
+  }
+}
+
+return false;
+}
+</script>
+<style>
+  header{
+    font-size: 2rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+    color: red;
+    height: 50px;
+    width: 100%;
+  }
+  form{
+    margin-top: 20px;
+    font-size: 1.5rem;
+    color: red;
+  }
+  input{
+    font-size: 1.5rem;
+    color: red;
+  }
+  button{
+    height: 50px;
+    width: 100px;
+    color: red;
+    text-transform: uppercase;
+    background-color: yellow;
+    border: none;
+    border-radius: 10px;
+  }
+  #div{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    
+  }
+ 
+</style>
+<body>
+  <header>
+    sing up
+  </header>
+<form method="post">
+  name:<input type="text" id="username" name="username"><br><br>
+  email:<input type="email" id="email" name="email"><br><br>
+  password:<input type="password" id="password" name="password"><br><br>
+  c-password:<input type="password" id="cpassword" name="cpassword"><br><br>
+  <div id="div"><button onclick="return mysing()">submit</button>
+  <a href="log.html">login</a></div>
+  
+</form>
+</body>
+</html>

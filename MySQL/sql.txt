@@ -1,0 +1,160 @@
+//create table department://
+
+create table department(dept_id int primary key,
+dept_name text not null,
+manager_id int,
+location_id int);
+ 
+ //insert record into department table//
+ 
+ insert into department values
+(1,'administration',1,3);
+ 
+ insert into department values
+(2,'marketing',2,2);
+
+ insert into department values
+(3,'purchasing',3,1);
+
+ insert into department values
+(4,'human resources',4,4);
+
+ insert into department values
+(5,'IT',6,5);
+
+ insert into department values
+(6,'sales',7,6);
+
+ insert into department values
+(7,'executive',8,8);
+
+ insert into department values
+(8,'finance',5,7);
+
+ insert into department values
+(9,'accounting',9,10);
+
+ insert into department values
+(10,'corporate tax',10,9);
+
+//display department table//
+
+select dept_id,dept_name,manager_id,location_id from department;
+
+//create table employee://
+
+create table employee(emp_id int primary key,
+first_name text(20),
+last_name text(20),
+email text,
+phone_no int(10),
+hire_date date,
+job_id text,
+salary int,
+commision int,
+manager_id int,
+dept_id int,foreign key(dept_id)references department(dept_id)
+);
+
+//insert record into employee table//
+
+insert into employee values(1,'bhavesh','shahane','bhavesh@gmail.com',1234567894,'2010-01-01','AD_PRES',10000,100,10,2);
+
+insert into employee values(2,'chetan','tikkas','chetan@gmail.com',1854567894,'2011-03-05','AD_VP',12000,50,1,5);
+
+insert into employee values(3,'pavan','mali','pavan@gmail.com',34567894,'2011-12-12','AD_VP',17000,20,6,7);
+
+insert into employee values(4,'raj','varma','raj@gmail.com',785667894,'2012-02-15','IT_PROG',9000,100,1,6);
+
+insert into employee values(5,'kuldeep','chaudhary','kc@gmail.com',1245857894,'2011-01-11','IT_PROG',11000,10,7,1);
+
+insert into employee values(6,'shaizan','kureshi','shaizan@gmail.com',1234864894,'2015-08-25','AC_MGR',13000,0,5,3);
+
+insert into employee values(7,'kuldeep','nipane','kuldeep@gmail.com',457869235,'2016-10-30','ST_MAN',15000,0,2,9);
+
+insert into employee values(8,'niraj','shakinal','niraj@gmail.com',1234746567,'2018-05-07','ST_CLERK',14000,10,4,1);
+
+insert into employee values(9,'nakul','parate','nakul@gmail.com',1237867894,'2018-04-17','AC_MGR',16000,0,3,2);
+
+insert into employee values(10,'ankit','sonawane','ankit@gmail.com',254675962,'2015-03-10','ST_CLERK',15000,20,1,2);
+
+//display employee table//
+
+select emp_id,first_name,last_name,email,phone_no,hire_date,job_id,salary,commision,manager_id,dept_id from employee;
+
+========================================
+//practice-1//
+*part-1*
+
+    ans 1. True
+    ans 2. True
+    ans 3. select emp_id,salary*12 as 'annual salary' from employee;
+
+*part-2*
+
+    ans 4. desc department;
+            select dept_id,dept_name,manager_id,location_id from department;
+            
+    ans 5. desc employee;
+    
+    ans 6. select emp_id,last_name,job_id,hire_date as 'start date' from employee;
+    
+    ans 7. select distinct job_id from employee;
+    
+*part-3*
+
+    ans 8. select emp_id as 'emp#',first_name as 'employee',job_id as 'job',hire_date as 'hire date' from employee;
+    
+    ans 9. select concat(last_name,',',job_id)as 'employee and title' from employee;
+    
+    ans 10.  select concat(emp_id,',',first_name,',',last_name,',',email,',',phone_no,',',',',hire_date,',',job_id,',',salary,',',commision,',',manager_id,',',dept_id) as 'the output' from employee;
+
+========================================
+
+practice-2
+
+    ans 1. select last_name,salary from employee where salary>12000;
+    
+    ans 2. select last_name,dept_id from employee where emp_id = 7; 
+    
+    ans 3. select last_name,salary from employee where salary not between 5000 and 12000;
+    
+    ans 4. select last_name,job_id,hire_date from employee where last_name='mali' or last_name='nipane' order by hire_date;
+    
+    ans 5.  select last_name,dept_id from employee where dept_id in(2,5);
+    
+    ans 6.  select last_name as 'employee',salary as 'monthly salary' from employee where salary between 5000 and 12000 and dept_id in (2,5);
+    
+    ans 7.  select last_name,hire_date from employee where hire_date like '%2015%';
+    
+    ans 8.  select last_name,job_id from employee where manager_id is null;
+    
+    ans 9. select last_name,salary,commision from employee order by salary desc,commision asc;
+    
+    ans 10. 
+             
+    select last_name,salary from employee where salary>&value;
+     
+    ans 11. 
+    
+    1. select emp_id,last_name,salary,dept_id from employee where manager_id = 3 order by last_name;
+    
+    2. select emp_id,last_name,salary,dept_id from employee where manager_id = 2 order by salary;
+    
+    3. select emp_id,last_name,salary,dept_id from employee where manager_id = 4 order by emp_id;
+    
+    ans 12.  select last_name from employee where last_name like '__a%';
+    
+    ans 13. select last_name from employee where last_name like '%a%e%';
+    
+    ans 14. select last_name,job_id,salary from employee where job_id='SA_REP' or job_id ='ST_CLERK' and salary not in(2500,3500,7000);
+    
+    ans 15. select last_name as 'employee',salary as 'monthly salary',commision from employee where commision = 20%100;
+    
+========================================
+    
+
+
+ 
+ 
+ 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+<form class="contener my-4">
+  <div class="mb-3">
+    <label for="user1" class="form-label">username :</label>
+    <input type="text" class="form-control" id="user1" aria-describedby="emailHelp">
+    
+    <div id="userHelp" class="form-text"></div>
+    
+  </div>
+  <div class="mb-3">
+      <label for="count1" class="form-label">select country :</label><br>
+  <select id="select">
+    <option>select one</option>
+     <option>India</option>
+      <option>..</option>
+  </select>
+</div>
+  </div>
+  
+  <div id="selectHelp" class="form-text"></div>
+</form>
+<center><div id="aj">
+  
+</div></center>
+  <script>
+  function myfun(){
+    var username = document.getElementById("user1").value;
+    var div = document.getElementById("userHelp");
+    var cont = document.getElementById("aj");
+    var user = document.getElementById("user1");
+    var select = document.getElementById("select").value;
+    var sel = document.getElementById("select");
+    var see = document.getElementById("selectHelp");
+    if(username === ""){
+      div.innerHTML="(*name required)";
+      div.style.color="red";
+     
+    }
+    else if(username.length<3 || username.length>31){
+      div.innerHTML="(*length is not defind)";
+      div.style.color="red";
+    
+    }else{
+      div.innerHTML="(done)";
+      div.style.color="green";
+    }
+    if(select === "select one"){
+      see.innerHTML="(*select right choise)";
+      see.style.color="red";
+     
+    }else{
+      see.innerHTML="(done)";
+      see.style.color="green";
+    }
+    if(user === document.activeElement || sel === document.activeElement){
+      cont.innerHTML="focus on";
+    }else{
+      cont.innerHTML="focus out";
+    }
+    
+  }
+  setInterval("myfun()",1000);
+  </script>
+</body>
+</html>

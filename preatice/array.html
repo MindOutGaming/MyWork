@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arrays</title>
+  <style>
+    button{
+      margin-top: 10px;
+      height: 50px;
+    }
+    p{
+      border: 2px solid black;
+      font-size: 2rem;
+    }
+    input{
+      height: 50px;
+      font-size: 1.5rem;
+    }
+    h1{
+      text-transform: uppercase;
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>my array</h1>
+<input type="number" id="input" placeholder="enter number"><br>
+<button onclick="addl()">add last</button><br>
+<button onclick="removel()">remove last</button><br>
+<button onclick="addf()">add first</button><br>
+<button onclick="removef()">remove first</button><br>
+<button onclick="sorta()">sort</button>
+<button onclick="reversea()">reverse</button>
+<button onclick="maxa()">maximum</button>
+<button onclick="mina()">minimum</button>
+<p id="p"></p>
+</body>
+<script>
+  arr=[];
+  
+  function addl(){
+    input = document.getElementById("input").value;
+    arr.push(input);
+    p = document.getElementById("p").innerHTML=arr;
+    input.value = "";
+  }
+  function removel(){
+    input = document.getElementById("input").value;
+    arr.pop();
+    p = document.getElementById("p").innerHTML=arr;
+    input.value="";
+  }
+  function addf(){
+    input = document.getElementById("input").value;
+    arr.unshift(input);
+    p = document.getElementById("p").innerHTML=arr;
+    input.value="";
+  }
+  function removef(){
+    input = document.getElementById("input").value;
+    arr.shift(input);
+    p = document.getElementById("p").innerHTML=arr;
+    input.value="";
+  }
+  function sorta(){
+    arr.sort(function(a,b){return a-b});
+    p = document.getElementById("p").innerHTML=arr;
+    input.value="";
+  }
+  function reversea(){
+    arr.reverse();
+    p = document.getElementById("p").innerHTML=arr;
+    input.value="";
+  }
+  function maxa(){
+    var m = Math.max(...arr);
+    p = document.getElementById("p").innerHTML=arr+" "+"maximum="+m;
+    input.value="";
+  }
+  function mina(){
+    var m = Math.min(...arr);
+    p = document.getElementById("p").innerHTML=arr+" "+"minimum="+m;
+    input.value="";
+  }
+</script>
+</html>

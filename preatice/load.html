@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+ 
+  <style>
+    #loading{
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: transparent url('/preatice/Interwind-1s-200px.gif') no-repeat center;
+      z-index: 99999;
+    }
+    #div{
+      background-color: black;
+      height: 500px;
+      width: 300px;
+      color: white;
+      opacity: 0.3;
+    }
+      body{
+       background-color: lightgreen;
+      }
+   
+  </style>
+</head>
+
+<body onload="setTimeout('funx()',2500);">
+<div id="loading">
+  
+</div>
+<div id="div">
+  <h1>welcome webpage</h1>
+</div>
+</body>
+<script>
+  var load = document.getElementById("loading");
+  var div1 = document.getElementById("div");
+  function funx(){
+    load.style.display="none";
+    div1.style.opacity=0.8;
+  }
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>button</title>
+  <style>
+     
+    button{
+      text-transform: uppercase;
+    }
+    h2{
+      text-transform: uppercase;
+    }
+    .toggle{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<h2>button</h2>
+<p>hi pls click the button </p>
+<button id="button" type="submit" onclick="button()">submit</button>
+<h2 id="header">you clicked the button thank you!</h2>
+<button onclick="show()">click me</button>
+<h2>header changer</h2>
+<input type="text" id="input" placeholder="type some & see magic">
+<h2 id="change">your text is!</h2>
+
+</body>
+<script>
+  
+  function button(){
+    header = document.getElementById('header');
+  header.style.color="red";
+  header.classList.toggle('toggle');
+  }
+  //----------------------------//
+  function show(){
+    msg=confirm("you want to another page!");
+    if(msg){
+      document.location.href="https://www.google.com/";
+    }
+    else{
+      alert("550 error!");
+    }
+    
+  }
+  //----------------------//
+  input = document.getElementById("input");
+  h = document.getElementById("change");
+  
+  input.addEventListener('keydown',hchanger);
+  function hchanger(event){
+    if(event.keyCode==13){
+      text = input.value;
+      h.innerHTML = text;
+      h.style.color="red";
+    }
+  }
+</script>
+</html>

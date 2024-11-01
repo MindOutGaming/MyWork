@@ -1,0 +1,280 @@
+SQL: 
+-> What is DB?
+
+what is data? data is meaningful information that we use for decisions.
+
+UCC : Student details
+Passport : Person details
+
+Cabinet Files: store : 
+
+-> loss / theft
+-> incorrect data
+-> search
+
+Excel Files: store
+
+-> lack of security
+-> lack of backup
+-> data manipulation logs
+
+DB: store
+
+-> secure (create users, assign roles, grant privilege, revoke privilege)
+-> data manipulation + query logs
+-> backup and recovery:
+main (crash) + backup1 + backup2 + backup3
+ -> search
+-> constraints: 
+a, entity constraint (primary key : unique - column identify row)
+
+table : entity : real world : student
+columns : attributes : entity's : name, age, dob, etc.
+row : individual data of the entity instance.
+
+J001,Jyoti, 20, 20-MAR-2002
+J009,Jyoti, 19, 20-MAR-2003
+J011,Jyoti, 23, 20-MAR-2001
+
+b, referential integrity constraint (foreign key)
+
+Common DB : 
+
+Person (parent) : personid, name, dob
+
+1, S***, 21-JULY
+2, D****, 22-JULY
+3, K****, 28-JULY
+
+School (child) : schooolid, name, personid
+
+1, METAS, 4
+
+insert anomaly.
+
+c, check constraint (price > 0, salary > 8000)
+
+-> What is DBMS? : it is a system that help us in managing dbs.
+
+- creating, modifying, or deleting db
+
+ex: Access, Base, etc.
+
+-> What is RDBMS? : Relational
+
+tables : relation : foreign key
+
+Ex: mysql, oracle, sql server, postgresql, etc.
+
+-> SQL basics
+
+mysql, rdbms : server => client.
+
+server : mysql install => create / manage db.
+client : mysql connect => queries.
+
+sql : languages
+
+* DQL : select : to retrieve data from the 
+tables, views, functions.
+
+DB: dbo (database objects)
+
+tables, views, procedures, functions, triggers, synonyms,
+sequences
+
+* DDL : create, alter, drop:
+
+create table
+create procedure
+drop procedure
+alter procedure
+
+* DML : insert, update, delete
+
+data is stored in tables, it is stored in the form of rows.
+insert : add rows
+update: update the existing rows
+delete: delete the rows.
+
+select statement: to retrieve the data from the tables.
+
+select <columnnames | *>
+[from] <tablename>[;]
+
+1, select 1 + 1;
+
+2, select empid, empname from employees;
+Error Code: 1054. Unknown column 'empid' in 'field list'
+
+3, desc employees;
+
+4, select id, emp_name from employees;
+
+5, select * from employees;
+
+6, select * from employees where salary = 90000;
+
+7, select * from employees where salary > 60000;
+
+8, select * from employees where emp_name = 'Max';
+
+9, select emp_name as 'Employee Name', manager_id as 'Maanger ID'
+from employees;
+
+10, select emp_name 'Employee Name', manager_id 'Maanger ID'
+from employees;
+
+11, select * from employees
+where manager_id is null
+and salary > 60000;
+
+select * from employees
+where manager_id is null
+and salary > 60000;
+
+discussion on null: does not exists.
+
+real world represent db.
+if something does not exists in real world, we represent it by null
+in db.
+
+examples:
+
+person : details : # of children, marital status (married)
+employee: commission : 
+
+sales : 0, 1,
+non sales: null
+
+12 - 18: 
+select 1 + null;
+select 1 - null;
+select null + null;
+select null - null;
+select 1 / null;
+select null * null;
+select null / null;
+select null / 2;
+
+19: select empid, empname, 
+(salary * 12 + commission * salary) as "Annual Salary"
+from employeeexample;
+
+20: select empid, empname, 
+(salary * 12 + ifnull(commission, 0) * salary) as "Annual Salary"
+from employeeexample;
+
+-- and : both the conditions are true, then true, otherwise false
+
+condition : true, false, null
+
+true and true : true
+false and false : false
+false and true : false
+
+true and null : null
+false and null : false
+null and false: false
+null and true : null
+
+OR: any of the condition is true, then true, otherwise false.
+
+true or true : true
+true or false: true
+false or true : true
+false or false : false
+
+true or null: true
+false or null: null
+null or null: null
+null and null: null
+
+
+
+story
+-> ask about difference 
+between is null and = null
+-> sql basics : 
+- like
+- not like
+- not betweeen
+- between
+
+
+- group by.
+
+like : pattern matching.
+
+
+%  : it would match any number of characters.
+
+-- display all the employees that has i in their name.
+select * from employeeexample
+where empname like '%i%';
+
+-- display all the employees that has y as their last character.
+select * from employeeexample
+where empname like '%y';
+
+-- display all the employees whose name start with s.
+select * from employeeexample
+where empname like 's%';
+
+_ : it would match any 1 character.
+
+-- display all the employees whose name's second character is e
+
+devanshu : match
+sneha : no match
+
+select * from employeeexample
+where empname like '_e%';
+
+select * from employeeexample
+where empname like '%e_';
+
+select * from employeeexample
+where empname not like '%h_';
+
+select * from employeeexample
+where salary >= 50 and salary <= 100;
+
+select * from employeeexample
+where salary between 50 and 100;
+
+select * from employeeexample
+where salary not between 80 and 100;
+
+- in
+- not in
+
+select * from employeeexample
+where deptid = 1 or deptid = 2;
+
+select * from employeeexample
+where deptid in (1, 2);
+
+select * from employeeexample
+where deptid not in (1, 2);
+
+select * from employeeexample
+where empname in ('Sherlock', 'Akshay');
+
+order by: is used to sort the rows,
+by default it would be ascending.
+
+select * from employeeexample
+order by empname desc;
+
+
+-> Joins
+
+
+
+-> Sub query
+-> DDL Statements
+-> DML Statements
+-> PL/SQL (Procedures, Functions, Cursors, Triggers, etc.)
+
+

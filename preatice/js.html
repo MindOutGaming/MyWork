@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    body{
+      font-size: 5rem;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+<p class="p1">hi</p>
+<p id="p2">hi</p>
+<p class="p1">hi</p>
+<p name="p3">hi</p>
+<p>hi</p>
+<p class="p1">hi</p>
+</body>
+<script>
+//id
+ var par =document.getElementById("p2");
+ par.style.color='red';
+ //class
+ var pat =document.getElementsByClassName("p1");
+ pat[1].style.color='pink';
+ //name
+ var per =document.getElementsByName("p3");
+ per[0].style.color='green';
+ //tagname
+ var por =document.getElementsByTagName("p");
+ por[4].style.color='red';
+ //queryselecter
+ vol=document.querySelector("p");
+ vol.style.backgroundColor="blue";
+ //queryselectAll
+ me = document.querySelectorAll("p");
+ me[2].style.backgroundColor="lightgreen"
+</script>
+</html>
