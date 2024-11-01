@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML to PDF Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div id="content" style="display: none">
+        <h1>Hello, World!</h1>
+        <p>This is a sample PDF document created using html2pdf.js!</p>
+    </div>
+    <button id="download">Download PDF</button>
+
+    <script>
+        document.getElementById('download').addEventListener('click', function () {
+            const element = document.getElementById('content');
+            html2pdf()
+    .from(element)
+    .set({
+        margin: 1,
+        filename: 'myDocument.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+    })
+    .save();
+
+        });
+    </script>
+</body>
+</html>

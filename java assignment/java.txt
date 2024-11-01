@@ -1,0 +1,699 @@
+Objectives:
+
+- Object Oriented Programming.
+
+class : is a user defined data type.
+
+int, float, double, long, char, etc. : built in data type (primitive data type)
+
+complex data types : array, class, structures, union, etc.
+
+Employee : represent in your software.
+
+complex entity:
+
+name, department, salary, designation, etc.
+
+C++ / Java:
+
+class Employee {
+       // attributes, class variables
+       string name;
+       string department;
+       int salary;
+       string designation;
+}
+class Manager extends Employee {
+
+}
+
+object : is a variable of the class.
+
+classname objectname;
+
+Employee emp;
+
+- Abstraction : showing essentials details.
+- Encapsulation : hiding non essentials details.
+- Inheritance : creating new classes from the existing classes.
+- Polymorphism : one thing, many forms
+
+H2O : solid, liquid, vapor
+
+Type of Thinking: 
+
+- incremental : every time : minor change + iterate
+- transformational : 1% of the time
+
+calling function : 
+
+
+called function : return data to the calling function, return type.
+void : returns nothing
+
+calling function send something to called function : parameters
+called function send something back to calling function : return type
+
+no parameters, return type
+parameters, return type
+no parameters, no return type
+parameter, no return type
+
+A B: AB, BA, AA, BB
+
+A B C : ABC, ACB, BCA, BAC, CAB, CBC, CCC, AAA, BBB, AAB, ABA, 
+
+12 : 12 / 2 : 6 / 2 : 3 / 2 : 1 / 2 : 0
+       0       0       1        1
+
+55 : 55 / 2 : 27 / 2 : 13 / 2 : 6 / 2 : 3 / 2 : 1 / 2 : 0
+      1         1        1       0       1      1
+
+11011 1
+1 * 2 ^ 5 + 1 * 2 ^ 4  + 1 * 2 ^ 2 + 1 * 2 ^ 1 + 1 * 2 ^ 0
+32 + 16 + 4 + 2 + 1
+55
+
+=> Reference Type : any other data type in java is a reference type.
+
+class, array, interface, etc.
+
+class Car {
+       // attributes
+       String brand;
+
+       // getter
+       public String getBrand() {
+              return brand;
+       }
+
+       // setter
+       public void setBrand(String b) {
+              brand = b;
+       }
+}
+
+
+public String getBrand() {
+  ^      ^          ^
+access   return type method name
+modifier       
+              return brand;
+       }
+
+       public void setBrand(String b) {
+
+<classname> <objectname> = new <classname>();
+
+Car car1 = new Car();
+Car car2 = new Car();
+new : 
+=> memory allocation
+=> address assign to the object.
+=> call the default constructor.
+
+reference type: null
+integral : 0
+boolean: false
+
+ctor is a function that will get called automatically when you create an object.
+
+-> ctor name should be same as class name.
+-> ctor should not have any return type.
+
+Polymorphism : one thing, many forms
+
+overloading
+
+C: Dennis Ritchie
+
+math.h : abs(-90) => 90
+abs(90) : 90
+
+fabs(-10.987) : 10.987
+labs(-12345677989) : 
+
+C++ : Bjarne Stroutstoup
+
+abs(int i)
+abs(float f)
+abs(long l)
+abs(double d)
+
+-> function name should be same.
+-> there must be a change in function signature.
+
+function signature:
+* number of parameters:
+
+add(int number1, int number2)
+add(int number1, int number2, int number3)
+
+* type of parameters
+* sequence of parameters
+
+display(int i, String n)
+display(String n, int i)
+
+a,
+int display() {
+
+}
+void display() {
+
+}
+
+b,
+int example1(int e) {
+
+}
+int example2(float e) {
+
+}
+
+c,
+int add(float number1, float number2) {
+
+}
+
+float add(int number1, float number2) {
+
+}
+
+d,
+int add(float number1, float number2) {
+
+}
+
+float add(float number2, float number1) {
+
+}
+
+e,
+void display(int i, int j, int k) {
+
+}
+void display(String i, int j, int k) {
+
+}
+
+=> Common Operators
+
+arithmetic operators: 
++, - , *, /, %
+
+25 / 5 : 5
+
+25 % 5 : 0
+
+AA operators:
+
++=, -=, *=, /=, %=
+
+a += b
+
+a = a + b
+
+a = 30
+b = 40
+
+a += b
+
+a = 70
+b = 40
+
+comparison operators: return boolean
+
+>, <, >=, <=, ==, !=
+
+a = 4
+b = 2
+a > b : true
+
+a, b, c : a is greatest
+b is greatest
+c is greatest
+
+logical operators : &&, ||, ! (single condition)
+
+&& : if all the conditions are true, then true otherwise false.
+|| : if all the conditions are false, then false, otherwise true.
+
+a > b && a > c
+b > a, b > c
+c > a, c > b
+
+
+=> Common Statements
+
+int num1 = 20;
+int num2 = 40;
+
+short ans = (short)num1 + num2;
+
+SOP("the ans is "+ans);
+===============================================================
+
+class Arithmetic {
+       public Arithmetic() {
+              SOP("A ctor is called");
+       }
+       public void display() {
+              SOP("i am a display function");
+       }
+}
+
+PSVM:
+
+Arithmetic a = new Arithmetic();
+a.display();
+
+Write a program that will display the output according to
+logic given below:
+
+a, if the number is divisible by 3, display "This is awesome"
+b, if the number is divisible by 5, display "This is great"
+c, if the number is divisible by 3 and 5, 
+display "This is awesome and great"
+d, otherwise display the number.
+
+increment and decrement operator:
+
+x = 6
+x++ : 7
+++x : 7
+
+x = 5
+x-- : 4
+--x : 4
+
+x = 6
+y = x++;
+
+y = x;
+x = x + 1;
+
+
+x = 6;
+y = ++x;
+
+x = x + 1;
+y = x;
+
+x = 7;
+y = 7;
+
+=================================================================
+
+m = 20;
+n = 10;
+
+x = m++ + --n;
+
+x = 29
+m = 21
+n = 9
+
+================================================================
+
+ternary operator: ?:
+
+a = 20
+b = 10
+
+if (a > b) {
+       c = a;
+} else {
+       c = b;
+}
+
+c = (a > b) ? a : b;
+
+==================================================================
+
+a = 20
+b = 10
+
+c = (a > b) ? (a + b) : (a - b);
+
+c = 30
+
+=================================================================
+
+a = 41;
+
+x = (a > 40) ? (a <= 20 ? -1 : 0) : -40;
+
+x = 0
+
+================================================================
+
+a = 45
+b = 3
+
+x = (a > b && b-- >= 2) ? (a++ - b--) : (a-- + b++)
+
+42
+43
+48
+
+================================================================
+
+switch ... case
+
+limited options
+equality
+
+1: Sunday
+2: Monday
+
+...
+7: Saturday
+
+
+
+loops : while, do...while, for
+break and continue
+arrays
+enhanced for loop
+
+80 - 100 : Outstanding : 85 :  / 10
+70 - 79 : Excellent :
+60 - 69 : Good :
+50 - 59 : Average : 
+< 50 : FAIL : 
+
+bonus : if you do it with switch...case
+
+loops : while, do...while, for
+
+they are collection of statements which will get executed 
+repeatedly until the condition is satisfied.
+
+starting point: 1
+terminating point : 10
+condition / step : +1
+
+1 ... 10
+
+A ... Z
+
+x and n:
+
+x = 3
+n = 2
+
+1 + 1/3 + 1/9 : 1.444
+
+x = 4
+n = 3
+
+1 + 1/4 + 1/16 + 1/64 : 1.328
+=====================================================
+1 to 100 : 
+
+1 to 15 :
+3 6 9 12 15 : 45
+5 10 15 : 30
+
+15 - 75 : -60
+
+sum of all the numbers that are divisible by 3 and 5
+
+(sum of all the number divisible by 3 + 
+sum of all the numbers divisible by 5)
+
+Group X + Girls:
+
+chetan
+Shehzan
+Mukesh
+Suraj
+Yash
+
+Main Menu
+1. Addition
+2. Subtraction
+3. Multiplication
+4. Division
+5. Exit
+
+Enter the option: 1
+
+23
+32
+
+The addition is 55
+
+Do you want to continue: y | n :y
+
+package : collection of classes and interfaces.
+
+System: 
+
+Application: Logic + Data
+
+whatsapp: contacts + import block package
+
+instagram : follow + import block package
+
+package : block logic
+
+-> less writing of code
+-> less time
+-> reusability
+-> scalability
+
+OS : kernel
+
+Processor : 1 million per second
+hard disk : buffer : is a temporary memory area.
+I/O
+
+prabhujeet
+
+queue :FIFO
+
+15 page: 150 seconds: 2 mins 
+
+============================================================
+
+objectives:
+
+- arrays in java
+
+int age = 20;
+
+collections: array, linkedlist, map, set, etc.
+
+array is a collection of same data type of fixed size.
+
+int array of size 5 : int value.
+
+linked list : is a collection of dynamic size.
+
+map : is a collection that has keys and values.
+
+values: associated with a key.
+
+rollno, name
+a, prabhujeet
+b, krishna
+c, kishore
+d, jash
+e, harsh
+
+set: is a collection of unique values.
+{1,1,1,11,1,1,1,11,1}
+
+=> {1,11}
+
+array: [1,1,1,2,3,4]
+
+set: {1,2,3,4}
+
+syntax #1: 
+
+<datatype> [] <arrayname>;
+<arrayname> = new <datatype>[size];
+
+int [] numbers;
+numbers = new int[5];
+
+0 0 0 0 0
+^
+0
+
+syntax #2:
+
+<datatype> [] <arrayname> = new <datatype>[size];
+
+syntax #3:
+
+<datatype> [] <arrayname> = {<value1>...<valuen>};
+
+Examples:
+
+double [] marks = new double[0];
+
+o correct, size would be 0 of the array.
+o incorrect, size cannot be zero.
+
+int [] numbers;
+numbers = new double[5];
+
+o correct, int can be cast to double
+o incorrect, type mismatch
+
+class Program {
+       public static void main(String [] args) {
+              int age = 20;
+              {
+                     int age = 40;
+                     SOP(age);
+              }
+              {
+                     age = 45;
+              }
+              SOP(age);
+       }
+}
+
+o 20
+  20
+
+o 40
+  20
+
+o 40
+  45
+
+o 20
+  45
+
+- enhanced for loop
+- String
+
+java.lang.ArrayIndexOutOfBoundsException
+
+String [] names = new String[5];
+
+for (String k : names) {
+
+}
+
+java: byte,short, int, long, double,float,boolean,char
+
+String is immutable : cannot be change.
+
+str = "java";
+
+str = "c++";
+
+str
+|
+|
+V
+|___C++___|
+
+Garbage Collector: it will scan the memory and find out unreferenced
+memory object.
+deallocate
+
+
+malayalam
+^       ^
+0       8
+1       7
+2       6
+3       5
+
+i
+0 => len - 1 - i : x - i
+1 => len - 1 - i : x - i
+2 => len - 1 - i : x - i
+3 => len - 1 - i : x - i 
+
+- more string functions and properties.
+
+Q1: there would be a list of not allowed words, 
+
+not allowed words:
+love
+fight
+bunk
+
+str: I love to bunk the classes and love to fight.
+
+love: 2
+bunk: 1
+fight: 1
+
+Q2: accept a string from the user and display the count 
+of characters
+
+example: john
+j : 1
+o : 1
+h : 1
+n : 1
+
+manan
+
+m : 1
+a : 2
+n : 2
+
+Q3: accept a number from the user and display the sum of its digits
+ignore duplicate values.
+
+example: 1234
+
+the sum is 10
+
+example: 11111
+
+the sum is 1
+
+example is 1213
+
+the sum is 6
+
+Q4: accept two numbers from the user and display all the numbers that
+are perfect.
+
+example: 6 : 1, 2 and 3 
+
+28 : 1, 2, 4, 7, 14
+
+Q5: accept the dimensions from the user : 
+
+"10x5x5" : 250
+
+"1x2x4" : 8
+
+Q6: accept the equation from the user:
+
+23+9+10+2 : 44
+
+
+
+
+
+
+
+- inheritance
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,149 @@
+- Objectives:
+
+- OOPS 101
+
+class : is a user defined data type that has
+methods and attributes.
+
+class Util {
+    // attributes
+
+    // methods
+}
+
+object : is an instance of the class.
+
+Util u = new Util();
+
+u is the object.
+Util is the class.
+
+- OOPS Pillar
+
+- abstraction: showing essential details. - what
+
+class: 
+
+concrete : object, inherit
+abstract : inherit
+
+
+Shape: area
+
+- encapsulation: hiding non essential details. - how 
+
+rectangle: length * breadth
+square: length * length
+circle: pi * radius * radius
+
+Android Developer: develop mobile applications.
+button use: click method pe kya hona chahiye : how
+
+Android SDK Developer: develop SDK 
+button : button ka click method tujhe override karna hai
+toast
+input
+input format
+activity
+intent
+
+
+Android OS Developer: 
+
+
+
+- inheritance: creating new classes from the existing classes.
+
+class A {
+    public void display() {
+
+    }
+}
+
+class B extends A {
+
+}
+
+Java does not support multiple inheritance.
+
+super keyword
+
+- polymorphism: one thing, many forms
+
+- overloading and overriding
+
+overloading: create two functions with same name 
+that different function signature.
+
+FS: number of parameters, type of parameters and 
+sequence of parameters.
+
+void display(String i, int s)
+void display(int i, String s)
+
+int add(int i, int j, int k)
+int add(int i, int j)
+
+int add(int i, int j)
+float add(float i, float j)
+
+not overloaded:
+
+int add()
+float add()
+
+- overriding:
+
+* inheritance
+* a super class's function definition will change in sub class.
+
+(               ) : accessible to all.
+    (       )     : accessible to sub classes.
+       (  )       : within the class.
+
+class A {
+    public void display() {
+        SOP("hi");
+    }
+}
+class B extends A {
+    public int display(int i) {
+        SOP("hello");
+        return 0;
+    }
+}
+
+-----------------------------------------------------------------------------------
+
+Collections framework (classes that helps in storing multiple values): 
+
+java.util package: ArrayList, LinkedList, List, Set, HashMap, HashSet
+
+single value: variables.
+
+int age = 20;
+
+age variable: single value at a time.
+
+multiple values: arrays.
+
+arrays: fixed size and same data type.
+
+eggs: 12 eggs, 24 eggs, 36 eggs
+
+universities: BCA seats: 700 seats (fixed)
+
+less than 700 students can be admitted to BCA for a particular year.
+exact 700 
+more than 700 students: it can't be stored.
+
+--------------------------------------------------------
+two types of data structures in java:
+ - List (ordered, non-unique)
+    a, ordered: they can be accessed using an index, which starts from zero.
+    b, non-unique: list can have duplicate elements.
+ - Set (unordered, unique)
+
+java 5 version : program : java 4 version : run : condition is that you should not use java 5 features.
+
+backward compatibility

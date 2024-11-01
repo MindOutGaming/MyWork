@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Sorting</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        th { 
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<table class="table table-striped">
+    <thead>
+        <tr class="bg-info">
+            <th data-column="name" data-order="desc">Name &#9650</th>
+            <th data-column="age" data-order="desc">Age &#9650</th>
+            <th data-column="birthdate" data-order="desc">Birthday &#9650</th>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+    </tbody>
+</table>
+
+<script>
+    var myArray = [
+        { 'name': 'Michael', 'age': '30', 'birthdate': '11/10/1989' },
+        { 'name': 'Mila', 'age': '32', 'birthdate': '10/1/1989' },
+        { 'name': 'Paul', 'age': '29', 'birthdate': '10/14/1990' },
+        { 'name': 'Dennis', 'age': '25', 'birthdate': '11/29/1993' },
+        { 'name': 'Tim', 'age': '27', 'birthdate': '3/12/1991' },
+        { 'name': 'Erik', 'age': '24', 'birthdate': '10/31/1995' }
+    ];
+
+    document.querySelectorAll('th').forEach(function(th) {
+        th.addEventListener('click', function() {
+            var column = this.getAttribute('data-column');
+            var order = this.getAttribute('data-order');
+            var text = this.innerHTML;
+            text = text.substring(0, text.length - 1);
+
+            if (order === 'desc') {
+                this.setAttribute('data-order', 'asc');
+                myArray.sort(function(a, b) {
+                    return a[column] > b[column] ? 1 : -1;
+                });
+                text += '&#9660';
+            } else {
+                this.setAttribute('data-order', 'desc');
+                myArray.sort(function(a, b) {
+                    return a[column] < b[column] ? 1 : -1;
+                });
+                text += '&#9650';
+            }
+
+            this.innerHTML = text;
+            buildTable(myArray);
+        });
+    });
+
+    buildTable(myArray);
+
+    function buildTable(data) {
+        var table = document.getElementById('myTable');
+        table.innerHTML = '';
+        data.forEach(function(item) {
+            var row = `<tr>
+                           <td>${item.name}</td>
+                           <td>${item.age}</td>
+                           <td>${item.birthdate}</td>
+                       </tr>`;
+            table.innerHTML += row;
+        });
+    }
+</script>
+
+</body>
+</html>
