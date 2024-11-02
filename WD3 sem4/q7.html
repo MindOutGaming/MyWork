@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<script src="/WD3 sem4/jquery.min.js"></script>
+
+<body>
+
+</body>
+<script>const fs = require('fs');
+const readline = require('readline');
+const rl = readline.createInterface({
+input:fs.createReadStream('employee.txt'),crlfDelay: Infinity});
+rl.on('line',(line)=>{console.log(line);});
+</script>
+
+//
+8.
+<script>
+  const fs = require("fs")
+  fs.writeFileSync("read.text","welcome to my file");
+  console.log("text file is created..!")
+  fs.OpenSync("read.text");
+  console.log("file open..!")
+  fs.appendFileSync("read.text","\nmy name is krish");
+  console.log("text file is updated..!")
+var read = fs.readFileSync("fssync/read.text","utt-8")
+console.log(read);
+fs.unlinkSync("read.text");
+console.log("file is successfully deleted...!")
+</script>
+</html>

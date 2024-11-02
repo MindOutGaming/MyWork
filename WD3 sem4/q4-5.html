@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head><script src="/WD3 sem4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+var jsonData = '{"id": "1", "name": "bhavesh", "age": "19"}';
+ var parsedData = $.parseJSON(jsonData);
+ document.write("Value of key1: " + parsedData.id +"<br>");document.write("Value of key2: " + parsedData.name+"<br>");document.write("Value of key3: " + parsedData.age);
+      });</script>
+<body>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ragistration form</title>
+  <style>
+body{display: flex;align-items: center;justify-content: center;text-transform: uppercase;}
+.div{border: 2px solid black;margin-top: 100px;height: 500px;width:400px;border-radius: 10px;background: rgb(90,22,242);background: linear-gradient(90deg, rgba(90,22,242,0.8346260510958158) 0%, rgba(159,0,255,0.7844588450896435) 41%, rgba(255,196,250,0.7652458044198843) 100%);color: white;}
+ header{display: flex;align-items: center;justify-content: center;font-size: 1.5rem;border-bottom: 2px solid magenta;height: 100px;color: white;}
+input{margin-top: 20px;height: 20px;border:none;border-bottom: 2px solid black;}
+#sub{margin-top:50px;margin-left: 150px;height:50px;width:100px;background:rgb(223,11,239);background:linear-gradient(90deg,rgba(223,11,239,0.7108090718587239) 0%,rgba(159,0,255,0.7844588450896435) 41%,rgba(111,36,221,0.8090087205935748) 100%);color:white;}
+label{margin-left: 20px;}
+input:focus{border: none;border-bottom: 3px solid blue;}
+  </style>
+</head>
+<script src="/WD3 sem4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){$("#myForm").submit(function(E){E.preventDefault();var name = $("#name").val();var phone = $("#phone").val();var email = $("#email").val();var pass = $("#password").val();var cpass = $("#cpassword").val();var check = true;
+if(name == ""){$("#err_name").text("*Please Enter User Name!");
+check = 0;}else if (name.length < 6){$("#err_name").text("*Too Short Name!");
+  check = 0;}else if (name.length > 6){$("#err_name").text("");check++;}
+  if(phone == ""){$("#err_phone").text("*Please Enter Phone Number!");
+ check = 0;}else if (phone.length != 10) {$("#err_phone").text("*Not valid Phone Number!");check = 0;}else if(phone.length==10){$("#err_phone").text("");check=check+1;}
+ if(email == ""){$("#err_mail").text("*Pleaes Enter E-mail");check=0;}else if(email.length<14){
+ $("#err_mail").text("*Not Valid Email!")check=0;}else{$("#err_mail").text("");check=check+1;}
+if(pass==""){$("#err_pass").text("*Please Enter Password!");
+check=0;}else if(pass.length<8){
+$("#err_pass").text("*Password is too short!");check=0;}else{$("#err_pass").text("");check=check+1;}
+if(cpass!=pass){$("#err_cpass").text("*Check Password and Try again!");
+check=0;}else{$("#err_cpass").text("");check=check+1;}if(check>2){$("#myForm").unbind('submit').submit();}});});
+</script>
+<body>
+<div class="div">
+<header>ragistration form</header>
+<form><label>name:<input type="text" id="name" placeholder="enter full name" required></label><br>
+<label>gender:
+<input type="radio" name="genter" >male
+<input type="radio" name="genter" >female
+ <input type="radio" name="genter">other
+ </label><br><label>phone no.:<input type="number" id="number" placeholder="enter phone no."></label><br><label>email:<input type="email" id="email" placeholder="enter email"></label><br><label>password:<input type="password" id="pass" maxlength="8" minlength="8" placeholder="enter password"></label><br><label>confirm password:<input type="password" id="pass" maxlength="8" minlength="8" placeholder="enter confirm password"></label><br><button id="sub">submit</button>
+  </form>
+</div>
+</body>
+</html>

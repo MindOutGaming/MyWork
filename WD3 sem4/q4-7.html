@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head><script src="/WD3 sem4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+$("#delete-rows-button").click(function() {$("#your-table tr").not(":first").remove();});});</script>
+<body>
+<button id="delete-rows-button">Delete Rows</button>
+<table id="your-table">
+<tr><th>id</th><th>name</th><th>age</th></tr>
+<tr><td>1</td><td>bhavehs</td><td>19</td></tr>
+<tr><td>2</td><td>xyz</td><td>20</td></tr>
+<tr><td>3</td><td>abc</td><td>19</td></tr></table>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>calculator</title>
+  <style>
+  body{display: flex;align-items: center;justify-content: center;}
+ .div{border-radius: 10px;height: 400px;width: 500px;display: flex;flex-direction: column;justify-content: space-around;position: relative;text-transform: uppercase;background-color: background: rgb(22,242,216);background: linear-gradient(90deg, rgba(22,242,216,1) 0%, rgba(60,60,206,1) 47%, rgba(0,212,255,1) 100%);}
+button{height: 50px;width: 100px;margin-left:10px;text-transform: uppercase;background-color:skyblue;color:black;}
+input{height: 50px;width: 250px;font-size: 1.5rem;margin-top: 10px;}
+.in{width: 500px;height: 100px;display: flex;flex-direction: column;justify-content: center;align-items: center;text-transform: uppercase;}
+.out{height: 100px;width: 500px;display: flex;justify-content: center;align-items: center;text-transform: uppercase;}
+.ans{font-size: 2rem;display: flex;justify-content: center;align-items: center;text-transform: uppercase;color: white;}
+header{height: 100px;width: 500px;display: flex;justify-content: center;align-items: center;font-size: 2rem;text-transform: uppercase;color: white;border-bottom: 2px solid white;}
+label{border: 2px solid white;}
+  </style>
+</head><script src="/WD3 sem4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#add").click(function(){Add();});});
+$(document).ready(function(){
+$("#sub").click(function(){Sub();});});
+$(document).ready(function(){
+$("#mul").click(function(){Mul();});});
+$(document).ready(function(){
+$("#divi").click(function(){Divi();});});
+function Add(){var no1=parseInt($("#a").val());var no2=parseInt($("#b").val());var result =no1+no2;ans = document.getElementById("ans").innerHTML = "addition is: "+result;} 
+function Sub(){var no1=parseInt($("#a").val());var no2=parseInt($("#b").val());var result =no1-no2;ans = document.getElementById("ans").innerHTML = "subtraction is: "+result;} 
+function Mul(){var no1=parseInt($("#a").val());var no2=parseInt($("#b").val());var result =no1*no2;ans =document.getElementById("ans").innerHTML = "multiplecation is: "+result;} 
+function Divi(){var no1=parseInt($("#a").val());var no2=parseInt($("#b").val());var result =no1/no2; ans = document.getElementById("ans").innerHTML = "divition is: "+result;}</script>
+<body>
+<div class="div"><header>calculator</header><div class="in"><input type="text" id="a" placeholder="enter first number" ><input type="text" id="b" placeholder="enter second number" ></div>
+<div class="out"><button id="add">Add</button><button id="sub">Sub</button><button id="mul">Mul</button><button id="divi">Divi</button></div><div class="ans"><label id="ans">ans</label></div></div>
+</body>
+</html>

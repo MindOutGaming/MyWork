@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head><script src="/WD3 sem4/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+$("#your-dropdown").change(function() {
+var selectedValue = $(this).val();
+ var selectedText = $("#your-dropdown option:selected").text();$("#selected-value").text(selectedValue);$("#selected-text").text(selectedText);});});</script>
+<body>
+<select id="your-dropdown"><option value="option1">BCA</option><option value="option2">BBA</option><option value="option3">BCOM</option></select><div id="selected-value"></div><div id="selected-text"></div>
+</body>
+</html>

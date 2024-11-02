@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head><script src="/WD3 sem4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){$("#your-textbox").on("keypress", function(event) {var charCode = event.which;
+if((charCode < 48 || charCode > 57) && charCode != 46 && charCode != 8){
+ event.preventDefault();}});});</script>
+<body>
+  <input type="text" id="your-textbox" />
+</body>
+</html>
