@@ -1,0 +1,258 @@
+.head {
+
+    background-image: url(main.avif);
+    background-attachment: fixed;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+/* #getApp {
+    font-size: medium;
+    margin-left: 18%;
+} */
+
+.card {
+    /* width: 340px; */
+    border-radius: 5%;
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+/* .cardBody {
+    margin-left: 5%;
+} */
+
+
+
+/* #row {
+    margin-left: 19%;
+    margin-top: 6%;
+    display: flex;
+} */
+
+
+
+/* .c-head {
+    font-size: 20px;
+} */
+
+/* .imgcard {
+    width: 300px;
+    color: white; 
+     height: 307px; 
+     margin: 0.9%;
+    margin-bottom: 100px;
+  
+
+} */
+
+.imgFi {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 70%);
+}
+
+/* #imgplace {
+    display: flex;
+} */
+
+/* .placename {
+    font-size: medium;
+} */
+
+
+/* .placeinfo {
+  
+    border-radius: 10px;
+    height: 78px;
+    width: 20%;
+    margin-left: 10px;
+} */
+
+.placeinfo:hover {
+    box-shadow: 2px 2px 5px 2px grey;
+
+}
+
+/* #place {
+    margin-left: 19%;
+    font-size: 213%;
+} */
+
+
+a {
+    text-decoration: none;
+    color: grey;
+}
+
+/* #zform {
+    width: 50%;
+    width: 605px;
+    height: 297px;
+    margin-left: 5%;
+    margin-bottom: 10%;
+} */
+
+/* .footernav {
+    display: flex;
+    width: 84%;
+    margin-left: 5%;
+
+} */
+
+/* .footerbutton {
+    height: 42px;
+    width: 113px;
+} */
+
+
+/* #socialhide {
+    display: flex;
+    flex-direction: column;
+} */
+
+/* .footer {
+    background: rgb(248, 248, 248);
+    height: 500px;
+} */
+
+
+/* .accordion-button {
+    height: 69px;
+    font-size: smaller;
+} */
+
+/* .accordion-item {
+    width: 87%;
+} */
+
+/* #dbutton {
+    background: transparent;
+} */
+
+@media only screen and (max-width: 600px) {
+    /* .searchForm {
+        margin-left: 10%;
+    } */
+
+    /* #getApp {
+        font-size: medium;
+        margin-left: 4%;
+    } */
+
+    /* #row {
+        margin-left: 8%;
+        margin-top: 26%;
+        display: block;
+    } */
+
+    /* #search {
+        min-width: 80%;
+
+        margin-top: 10px;
+        border-radius: 5px
+    } */
+
+    /* #span {
+        width: 81%;
+        border-radius: 12px;
+    } */
+
+    /* #dbutton {
+        width: 252%;
+        background: transparent;
+    } */
+
+    /* .dropdown {
+      margin-left: -35%;
+    } */
+
+    /* .c-head {
+      font-size: 13px;
+    } */
+
+    /* #imgplace {
+        display: block;
+        min-width: 87%;
+    } */
+
+    /* #place {
+        margin-left: 6%;
+        font-size: 128%;
+    } */
+
+    /* .placename {
+        font-size: small;
+    } */
+
+    /* .placeinfo {
+        width: 78%;
+        margin-top: 10px;
+    } */
+
+    /* #imgH {
+        display: none;
+    } */
+
+    /* #zform {
+        width: 100%;
+    } */
+
+    /* .footernav {
+        display: block;
+        width: 100%;
+        margin-left: 0%;
+
+    } */
+
+    /* #endbuttondiv {
+   
+        font-size: smaller;
+    } */
+
+    /* #socialhide {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    } */
+
+
+    /* #footermdiv {
+        height: auto;
+    } */
+
+    /* .footer {
+        height: 800px;
+        width: 100%;
+    } */
+
+    /* .footerbutton {
+        margin-top: 20px;
+    } */
+
+
+
+    /* #citylist {
+        display: flex;
+        justify-content: space-between;
+    } */
+
+    /* #searchDiv {
+        display: flex;
+        flex-direction: column;
+    } */
+
+    /* #searchicon {
+        display: none;
+    } */
+
+    /* #socialLink {
+        margin-top: 17px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    } */
+}

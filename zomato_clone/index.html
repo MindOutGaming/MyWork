@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zomato</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+</head>
+
+<body>
+  <div>
+    <div class="head ">
+
+      <nav class="navbar navbar-expand-sm">
+        <div class="container ">
+
+          <a id="getApp" class="navbar-brand text-light ms-1 ms-md-5 h6" href="#"><i class="fa-solid fa-mobile fa-sm "
+              style="color: #cfcfcf;"></i> get the App</a>
+
+          <i class="fa-solid fa-xmark navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar"
+            style="margin-left: 115px;border: none;color: #ffffff;margin-left: 48%;">
+
+
+          </i>
+          <form class="d-flex me-5" >
+            <div class="collapse navbar-collapse" id="mynavbar">
+
+              <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link text-light me-3" href="#" style="font-size: large;">Investor Relations</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link text-light me-3" href="#" style="font-size: large;">Add restaurant</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link text-light me-3" href="#" style="font-size: large;">Log in</a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link text-light me-3" href="#" style="font-size: large;">Sign up</a>
+                </li>
+              </ul>
+          </form>
+        </div>
+    </div>
+    </nav>
+
+
+    <div class="mt-5 text-center ">
+      <img class="mx-auto d-block" src="zomato.avif" alt="zomato" height="57px" />
+      <p class="text-light h1 mt-3">Discover the best food & drinks in Surat</p>
+
+      <form class="searchForm container input-group  w-50 mt-4 d-md-flex flex-md-row flex-column justify-content-center ">
+        <!-- <div id="searchDiv" class="input-group input-group-lg  ms-5 w-50 flex-md-row"> -->
+
+          <span class="input-group-text bg-white" id="span">
+            <div class="dropdown">
+              <i class="fa-solid fa-location-dot" style="color: #ec4b4b;"></i>
+              <button type="button" id="dbutton" class="btn btn-light dropdown-toggle bg-transparent" data-bs-toggle="dropdown">
+                Surat
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Mumbai</a></li>
+                <li><a class="dropdown-item" href="#">Navsari</a></li>
+                <li><a class="dropdown-item" href="#">Valsad</a></li>
+              </ul>
+            </div>
+            <i id="searchicon" class="fa-solid fa-magnifying-glass ms-3 ms-md-0" style="color: #101113;"></i>
+          </span>
+          <input type="search" id="search" class="form-control d-none d-md-block mt-2 mt-md-0" placeholder="Search of restaurant,cuisine or a dish" />
+        <!-- </div> -->
+      </form>
+
+    </div>
+
+    <!-- end head -->
+
+    <div class="d-flex flex-column overflow-hidden py-5">
+     <div class="container py-5 w-100">
+      <div id="row" class="row mt-3 d-flex flex-column flex-md-row">
+
+        <div class="col p-3 p-md-0">
+          <div class="container">
+            <div class="card w-100 w-md-50 overflow-hidden">
+             
+              <img class="card-img-top object-fit-cover" src="img1.avif" alt="Card image 1" style="width:100%" height="181px">
+           
+              <div class="cardBody p-3">
+                <p class="card-text">
+                <p><b>Order Online</b></p>
+                </p>
+                <h6>Stay home and Order to your doorstep</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col p-3 p-md-0">
+          <div class="container">
+            <div class="card w-100 w-md-50 overflow-hidden">
+              <img class="card-img-top object-fit-cover" src="img2.avif" alt="Card image 1" style="width:100%" height="181px">
+              <div class="cardBody p-3">
+                <p class="card-text">
+                <p><b>Dining</b></p>
+                </p>
+                <h6>View the city's favourite dining venues</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col p-3 p-md-0">
+          <div class="container">
+            <div class="card w-100 w-md-50 overflow-hidden">
+              <img class="card-img-top object-fit-cover" src="img3.avif" alt="Card image 1" style="width:100%" height="181px">
+              <div class="cardBody p-3">
+                <p class="card-text">
+                <p><b>Nightlife and Clubs</b></p>
+                </p>
+                <h6>Expoler the city's top nightlife outlets</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+      <!-- -->
+      <div class="container d-flex justify-content-between py-3">
+        <div class="c-head h-4">
+          <p style="font-size: xx-large;"><b>Collections</b></p>
+          <p>Explore curated lists of top restaurants, cafes, pubs, and bars in Surat, based on trends
+          </p>
+        </div>
+        <a href="#" class="d-none d-md-block py-5 text-danger text-decoration-none" >All Collection in Surat <i
+            class="fa-solid fa-caret-up fa-rotate-90" style="color: #fb0909;"></i></a>
+      </div>
+
+      <div id="imgplace" class="container d-flex justify-content-around w-100 flex-md-row flex-column align-items-center py-3" >
+
+        <div class="imgcard d-flex flex-column justify-content-end w-100 text-light  ms-2 mt-3" style=" background:  url('img4.avif') no-repeat ;background-size: cover;
+      background-position: center; height: 307px;object-fit: cover;">
+          <div class="imgFi d-flex flex-column">
+            <span class="ms-2">13 Unmissable Gujarati Del...</span>
+            <a class="ms-2" href="#" style="text-decoration: none; color: white;">11 Places <i
+                class="fa-solid fa-caret-up fa-rotate-90" style="color: #f3f2f2;"></i></a>
+          </div>
+        </div>
+
+        <div class="imgcard d-flex flex-column justify-content-end w-100 text-light  ms-2 mt-3" style=" background:  url('img5.avif') no-repeat ;background-size: cover;
+      background-position: center; height: 307px; object-fit: cover;">
+          <div class="imgFi d-flex flex-column">
+            <span class="ms-2">11 Great Cafes</span>
+            <a class="ms-2" href="#" style="text-decoration: none; color: white;">15 Places <i
+                class="fa-solid fa-caret-up fa-rotate-90" style="color: #f3f2f2;"></i></a>
+          </div>
+        </div>
+
+        <div class="imgcard d-flex flex-column justify-content-end w-100 text-light  ms-2 mt-3" style=" background:  url('img6.avif') no-repeat ;background-size: cover;
+      background-position: center; height: 307px; object-fit: cover;">
+          <div class="imgFi d-flex flex-column">
+            <span class="ms-2">9 Local Favourite Places</span>
+            <a class="ms-2" href="#" style="text-decoration: none; color: white;">8 Places <i
+                class="fa-solid fa-caret-up fa-rotate-90" style="color: #f3f2f2;"></i></a>
+          </div>
+        </div>
+
+        <div class="imgcard d-flex flex-column justify-content-end w-100 text-light  ms-2 mt-3" style=" background:  url('img7.avif') no-repeat ;background-size: cover;
+      background-position: center; height: 307px; object-fit: cover;">
+          <div class="imgFi d-flex flex-column ">
+            <span class="ms-2">7 Serene Rooftop Places</span>
+            <a class="ms-2" href="#" style="text-decoration: none; color: white;">5 Places <i
+                class="fa-solid fa-caret-up fa-rotate-90" style="color: #f3f2f2;"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!---->
+      <div id="place " class=" display-6 mt-5 mt-md-5">
+        <div class="container w-100 ">
+        <p><b>Popular localities in around Surat</b></p>
+
+        <div class="row  mb-3 flex-column flex-md-row w-100 align-items-center px-5" >
+          <div class="placeinfo col d-flex justify-content-between align-items-center border  w-100 ms-3 mt-3 mt-md-0 rounded">
+            <div class="placename mt-3 h6">
+              <h5><b>Vesu</b></h5>
+              <p>747 Places</p>
+            </div>
+            <i class="fa-solid fa-greater-than" style="color: #0c0d0d;font-size: small;"></i>
+          </div>
+
+          <div class="placeinfo col d-flex justify-content-between align-items-center border  w-100 ms-3 mt-3 mt-md-0 rounded">
+            <div class="placename mt-3 h6">
+              <h5><b>New Town</b></h5>
+              <p>747 Places</p>
+            </div>
+            <i class="fa-solid fa-greater-than" style="color: #0c0d0d;font-size: small;"></i>
+          </div>
+
+          <div class="placeinfo col d-flex justify-content-between align-items-center border  w-100 ms-3 mt-3 mt-md-0 rounded">
+            <div class="placename mt-3 h6">
+              <h5><b>Piplod</b></h5>
+              <p>197 Places</p>
+            </div>
+            <i class="fa-solid fa-greater-than" style="color: #0c0d0d;font-size: small;"></i>
+          </div>
+
+          <div class="placeinfo col d-flex justify-content-between align-items-center border w-100 ms-3 mt-3 mt-md-0 rounded">
+            <div class="placename mt-3 h6">
+              <h5><b>Adajan Gam</b></h5>
+              <p>352 Places</p>
+            </div>
+            <i class="fa-solid fa-greater-than" style="color: #0c0d0d;font-size: small;"></i>
+          </div>
+        </div>
+
+        <div class="row  mb-3  flex-column flex-md-row w-100 align-items-center px-5" >
+          <div class="placeinfo col d-flex justify-content-between align-items-center border w-100 ms-3 mt-3 mt-md-0 rounded">
+            <div class="placename mt-3 h6">
+              <h5><b>City Light</b></h5>
+              <p>124 Places</p>
+            </div>
+            <i class="fa-solid fa-greater-than" style="color: #0c0d0d;font-size: small;"></i>
+          </div>
+
+          <div class="placeinfo col d-flex justify-content-between align-items-center border w-100 ms-3 mt-3 mt-md-0 rounded">
+            <div class="placename mt-3 h6">
+              <h5><b>Athwa</b></h5>
+              <p>129 Places</p>
+            </div>
+            <i class="fa-solid fa-greater-than" style="color: #0c0d0d;font-size: small;"></i>
+          </div>
+
+          <div class="placeinfo col d-flex justify-content-between align-items-center border w-100 ms-3 mt-3 mt-md-0 rounded">
+            <div class="placename mt-3 h6">
+              <h5><b>Nanpura</b></h5>
+              <p>51 Places</p>
+            </div>
+            <i class="fa-solid fa-greater-than" style="color: #0c0d0d;font-size: small;"></i>
+          </div>
+
+          <div class="placeinfo col  border ms-3 w-100 mt-3 mt-md-0 rounded">
+            <div class="placename mt-3 h6 text-center">
+              <h5 class="py-4"><b>See More</b>
+                <i class="fa-solid fa-greater-than fa-rotate-90 fa-sm " style="color: #000000;"></i>
+
+              </h5>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <!---->
+      <div class="container-flued d-flex justify-content-center h-75 mb-5"
+        style="background-color: rgb(255, 251, 247);">
+
+        <div class="d-flex  align-items-center h-50" >
+          <div id="imgH" class="d-none d-md-block"> <img src="img8.avif" alt="img" height="300px" width="258px" class="object-fit-cover" /></div>
+
+          <div id="zform" class="w-100 ms-3 mb-3 py-5">
+            <h1  class="f5">Get the Zomato app</h1>
+            <p class="f6">We will send you a link, open it on your phone to download the app</p>
+            <form>
+              <div class="d-flex">
+                <div class="form-check">
+                  <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>Email
+                  <label class="form-check-label" for="radio1"></label>
+                </div>
+                <div class="form-check ms-4">
+                  <input type="radio" class="form-check-input " id="radio2" name="optradio" value="option2">Phone
+                  <label class="form-check-label" for="radio2"></label>
+                </div>
+              </div>
+              <div class="d-flex w-100">
+                <div class="form-floating mb-3 mt-3">
+                  <input type="text" class="form-control w-100" id="email" placeholder="Email" name="email">
+                  <label for="email">Email</label>
+                </div>
+                <button type="button" class="btn btn-danger  m-3">Share app link</button>
+              </div>
+            </form>
+            <span class="text-muted">Download app from</span>
+            <div class="mt-3">
+              <img src="img9.webp" alt="" height="37px" width="126px">
+              <img src="img10.webp" alt="" height="37px" width="126px">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!---->
+
+      <div class="container mb-4">
+
+        <h1>Explore options near me</h1>
+
+        <div class="accordion d-flex flex-column align-items-center d-md-block" id="accordionPanelsStayOpenExample" >
+          <div class="accordion-item w-100">
+            <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+              <button class="accordion-button " type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseOne" style="font-size: x-large;">
+                Popular cuisines near me
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingOne">
+              <div class="accordion-body">
+                <a href="#">Bakery food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Beverages food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Biryani food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Burger food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Chinese food near me<i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Coffee food near me</a>
+                <a href="#">Desserts food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Gujarati food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Ice Cream food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item w-100 mt-3 border">
+            <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseTwo" style="font-size: x-large;">
+                Popular restaurant types near me
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingTwo">
+              <div class="accordion-body">
+                <a href="#">Bakery food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Beverages food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Biryani food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Burger food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Chinese food near me<i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Coffee food near me</a>
+                <a href="#">Desserts food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Gujarati food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+                <a href="#">Ice Cream food near me <i class="fa-solid fa-circle fa-2xs" style="color: #808185;"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item w-100 mt-3 border">
+            <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseThree" style="font-size: x-large;">
+                Top Restaurant Chains
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingThree">
+              <div class="accordion-body">
+                <div class="d-flex flex-column flex-md-row justify-content-around">
+                  <a href="#">Burger King</a>
+                  <a href="#">KFC</a>
+                  <a href="#">McDonald's</a>
+                  <a href="#">Pizza Hut</a>
+                  <a href="#">Subway</a>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+
+
+          <div class="accordion-item w-100 mt-3 border">
+            <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+              <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                aria-controls="panelsStayOpen-collapseFour" style="font-size: x-large;">
+                Cities We Deliver To
+              </button>
+            </h2>
+            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+              aria-labelledby="panelsStayOpen-headingFour">
+              <div class="accordion-body d-flex justify-content-between d-md-block" id="citylist">
+                <div class="d-flex flex-column flex-md-row justify-content-around mt-2">
+                  <a href="#">Delhi NCR</a>
+                  <a href="#">Kolkata</a>
+                  <a href="#">Mumbai's</a>
+                  <a href="#">Bengaluru</a>
+                  <a href="#">Pune</a>
+                </div>
+
+                <div class="d-flex flex-column flex-md-row justify-content-around mt-2">
+                  <a href="#">Delhi NCR</a>
+                  <a href="#">Kolkata</a>
+                  <a href="#">Mumbai's</a>
+                  <a href="#">Bengaluru</a>
+                  <a href="#">Pune</a>
+                </div>
+
+                <div class="d-flex flex-column flex-md-row justify-content-around mt-2">
+                  <a href="#">Delhi NCR</a>
+                  <a href="#">Kolkata</a>
+                  <a href="#">Mumbai's</a>
+                  <a href="#">Bengaluru</a>
+                  <a href="#">Pune</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+
+      </div>
+
+      <!---->
+
+
+    </div>
+    <!-- end body -->
+    <footer class="footer container-fluid" style="background: rgb(248, 248, 248);">
+      <div id="footermdiv" class="container p-5">
+        <div class="footernav d-md-flex d-block ms-1 w-100 justify-content-between align-items-center mt-3 overflow-hidden">
+          <section class="p-3 ms-md-0 w-100"><img src="img11.avif" alt="" height="32px" width="137px"></section>
+
+          <div class="d-flex h5 mt-3 mt-md-1" id="endbuttondiv">
+
+            <div class="dropdown">
+              <button class="footerbutton btn dropdown-toggle border mt-md-3" data-bs-toggle="dropdown"><img class="me-2"
+                  src="india.png" alt="" height="20px" width="20px">India
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#"><img class="me-2" src="india.png" alt="" height="20px"
+                      width="20px">India</a></li>
+                <li><a class="dropdown-item" href="#">
+
+                    <img class="me-2" src="uae.png" alt="" height="20px" width="20px">UAE</a></li>
+
+              </ul>
+            </div>
+
+            <div class="dropdown ms-3">
+              <button class="footerbutton border btn dropdown-toggle  mt-md-3" data-bs-toggle="dropdown"><i
+                  class="fa-solid fa-globe me-2" style="color: #050505;"></i>English
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Gujarati</a></li>
+                <li><a class="dropdown-item" href="#">Hindi</a></li>
+                <li><a class="dropdown-item" href="#">Marathi</a></li>
+                <li><a class="dropdown-item" href="#">English</a></li>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="row  p-4 w-100">
+
+          <div class="d-flex flex-column col-6 col-md">
+            <h6>ABOUT ZOMATO</h6>
+            <a href="#">Who We Are</a>
+            <a href="#">Blog</a>
+            <a href="#">Work With Us</a>
+            <a href="#">Investor Relations</a>
+            <a href="#">Report Fraud</a>
+            <a href="#">Press Kit</a>
+            <a href="#">Contact Us</a>
+          </div>
+
+          <div class="d-flex flex-column col-6 col-md">
+            <h6>ZOMAVERSE</h6>
+            <a href="#">Zomato</a>
+            <a href="#">Blinkit</a>
+            <a href="#">Feeding India</a>
+            <a href="#">Hyperpure</a>
+            <a href="#">Zomato Live</a>
+            <a href="#">Zomaland</a>
+            <a href="#">Weather Union</a>
+          </div>
+
+          <div class="d-flex flex-column col-6 col-md">
+            <h6>FOR RESTAURANTS</h6>
+            <a href="#">Partner With Us</a>
+            <a href="#">Apps For You</a>
+          </div>
+
+
+          <div class="d-flex flex-column col-6 col-md">
+            <h6>LEARN MORE</h6>
+            <a href="#">Privacy</a>
+            <a href="#">Security</a>
+            <a href="#">Terms</a>
+            <a href="#">Sitemap</a>
+          </div>
+
+          <div class="col-6 col-md d-flex flex-md-column flex-column-reverse align-items-md-center" id="socialhide">
+            <div id="socialLink" class="mt-md-3 d-flex d-md-block flex-column align-items-center mt-3">
+              <h6>SOCIAL LINKS</h6>
+              <a href="#">
+                <i class="fa-brands fa-linkedin fa-lg" style="color: #050505;"></i>
+                <i class="fa-brands fa-instagram fa-lg ms-2" style="color: #101114;"></i>
+                <i class="fa-brands fa-twitter fa-lg ms-2" style="color: #050506;"></i>
+                <i class="fa-brands fa-youtube fa-lg ms-2" style="color: #020203;"></i>
+                <i class="fa-brands fa-facebook fa-lg ms-2" style="color: #070709;"></i>
+              </a>
+            </div>
+
+            <div class="d-flex gap-2">
+              <a href="#">
+
+                <img src="img9.webp" alt="" height="37px" width="126px" class="mt-2">
+              </a>
+              <a href="#">
+                <img src="img10.webp" alt="" height="37px" width="126px" class="mt-2">
+
+              </a>
+            </div>
+
+          </div>
+          <hr class="mt-5">
+          <span style="font-size: smaller;
+    color: grey;">By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and
+            Content Policies. All trademarks are properties of their respective owners. 2008-2024 © Zomato™ Ltd. All
+            rights reserved.</span>
+        </div>
+
+      </div>
+    </footer>
+  </div>
+
+</body>
+
+</html>
