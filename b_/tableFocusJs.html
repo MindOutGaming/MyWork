@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Row Navigation</title>
+    <style>
+        /* Highlight the row when it's focused */
+        tr:focus {
+            background-color: #e0e0e0;
+            border:1px solid red;
+        }
+
+        /* Allow the table to be focusable */
+        table {
+            outline: none; /* Remove outline from the table itself */
+        }
+
+        /* Make each row focusable */
+        tr {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<table id="myTable" style="width: 100%; border: 1px solid black;" tabindex="0">
+    <thead>
+        <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+            <th>Header 3</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr tabindex="0">
+            <td>Row 1, Cell 1</td>
+            <td>Row 1, Cell 2</td>
+            <td>Row 1, Cell 3</td>
+        </tr>
+        <tr tabindex="0">
+            <td>Row 2, Cell 1</td>
+            <td>Row 2, Cell 2</td>
+            <td>Row 2, Cell 3</td>
+        </tr>
+        <tr tabindex="0">
+            <td>Row 3, Cell 1</td>
+            <td>Row 3, Cell 2</td>
+            <td>Row 3, Cell 3</td>
+        </tr>
+        <tr tabindex="0">
+            <td>Row 4, Cell 1</td>
+            <td>Row 4, Cell 2</td>
+            <td>Row 4, Cell 3</td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    // Get all the table rows in the body
+    const rows = document.querySelectorAll('#myTable tbody tr');
+    let currentRowIndex = 0;
+
+    // Function to set focus on a row and apply visual highlight
+    function setRowFocus(index) {
+        if (index >= 0 && index < rows.length) {
+            // Focus the row itself
+            rows[index].focus();
+            currentRowIndex = index; // Update the current row index
+        }
+    }
+
+    // Initially focus the first row
+    setRowFocus(currentRowIndex);
+
+    // Event listener for keydown events
+    document.getElementById('myTable').addEventListener('keydown', function(event) {
+        if (event.key === 'ArrowDown') {
+            if (currentRowIndex < rows.length - 1) {
+                setRowFocus(currentRowIndex + 1);
+            }
+        } else if (event.key === 'ArrowUp') {
+            if (currentRowIndex > 0) {
+                setRowFocus(currentRowIndex - 1);
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

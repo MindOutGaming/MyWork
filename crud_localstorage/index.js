@@ -46,7 +46,6 @@ function formSubmit() {
         language
       );
 
-
 if (localStorage.key("arrayKey")){
 // alert("yes");
 var a = JSON.parse(localStorage.getItem("arrayKey"));
