@@ -1,6 +1,7 @@
 
 <?php
-$con = mysqli_connect("sql311.infinityfree.com","if0_36474363","HwGqtK3ckLu","if0_36474363_ministore");
+//$con = mysqli_connect("sql311.infinityfree.com","if0_36474363","HwGqtK3ckLu","if0_36474363_ministore");
+$con = mysqli_connect("localhost","root","","myDb");
 if($con){
   echo("<script>alert('ok')</script>");
 }
