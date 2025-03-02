@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Preview</title>
+</head>
+<body>
+    <input type="file" id="imageInput" accept="image/*">
+    <img id="previewImage" src="" alt="Selected Image" width="300">
+    
+    <script>
+        // Get references to elements
+        const imageInput = document.getElementById("imageInput");
+        const previewImage = document.getElementById("previewImage");
+
+        // Add event listener to input
+        imageInput.addEventListener("change", function(event) {
+            const file = event.target.files[0]; // Get the selected file
+            if (file) {
+                const reader = new FileReader(); // Create a FileReader
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result; // Set image source
+                };
+                reader.readAsDataURL(file); // Read file as data URL
+            }
+        });
+    </script>
+</body>
+</html>
