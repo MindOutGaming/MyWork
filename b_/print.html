@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+  <script type="text/javascript" charset="utf-8">
+    function printHTMLString(htmlString) { const printWindow = window.open('', '', 'width=800,height=600'); printWindow.document.open(); printWindow.document.write(` <html> <head> <title>Print</title> <style> body { font-family: Arial, sans-serif; padding: 20px; } /* Add any print-specific styles here */ </style> </head> <body> ${htmlString} </body> </html> `); printWindow.document.close(); printWindow.focus(); printWindow.print(); 
+    setTimeout(()=>{
+      printWindow.close(); 
+    },1000);
+    
+      
+    } printHTMLString('<h1>Print without iframe or div</h1><p>This is a raw HTML string.</p>');
+  </script>
+</body>
+
+</html>
