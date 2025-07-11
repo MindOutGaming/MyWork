@@ -1,22 +1,181 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Bhavesh Shahane</title>
+  <meta name="description" content="This is Portfolio of Bhavesh Shahane" />
+  <meta name="keywords" content="Portfolio" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 1000;
+      border-bottom: 1px solid #ddd;
+    }
+    .nav-link {
+      margin-right: 1rem;
+    }
+    .hero {
+      height: 100vh;
+      background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+    section {
+      padding: 80px 0;
+    }
+    .progress-bar {
+      background-color: #007bff;
+    }
+  </style>
 </head>
-
 <body>
-  <script type="text/javascript" charset="utf-8">
-    function printHTMLString(htmlString) { const printWindow = window.open('', '', 'width=800,height=600'); printWindow.document.open(); printWindow.document.write(` <html> <head> <title>Print</title> <style> body { font-family: Arial, sans-serif; padding: 20px; } /* Add any print-specific styles here */ </style> </head> <body> ${htmlString} </body> </html> `); printWindow.document.close(); printWindow.focus(); printWindow.print(); 
-    setTimeout(()=>{
-      printWindow.close(); 
-    },1000);
-    
-      
-    } printHTMLString('<h1>Print without iframe or div</h1><p>This is a raw HTML string.</p>');
-  </script>
-</body>
 
+  <!-- Header -->
+  <header class="py-3 shadow-sm">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h2 class="m-0">Bhavesh Shahane</h2>
+      <nav>
+        <a href="#hero" class="nav-link d-inline-block">Home</a>
+        <a href="#about" class="nav-link d-inline-block">About</a>
+        <a href="#projects" class="nav-link d-inline-block">Projects</a>
+        <a href="#contact" class="nav-link d-inline-block">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div>
+      <h1 class="display-4" id="heroText">Hi, I'm Bhavesh</h1>
+      <p class="lead" id="heroSub">Full Stack Developer</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>About Me</h2>
+        <p>I am a skilled full stack developer with experience in HTML, CSS, JS, Java, PHP, Vue, Go, etc.</p>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Skills</h4>
+          <div class="mb-3">HTML <div class="progress"><div class="progress-bar w-100">100%</div></div></div>
+          <div class="mb-3">CSS <div class="progress"><div class="progress-bar w-90">90%</div></div></div>
+          <div class="mb-3">JavaScript <div class="progress"><div class="progress-bar w-75">75%</div></div></div>
+          <div class="mb-3">Java <div class="progress"><div class="progress-bar w-80">80%</div></div></div>
+          <div class="mb-3">PHP <div class="progress"><div class="progress-bar w-75">75%</div></div></div>
+          <div class="mb-3">Vue <div class="progress"><div class="progress-bar w-80">80%</div></div></div>
+        </div>
+        <div class="col-md-6">
+          <img src="https://via.placeholder.com/500x300?text=Your+Photo" class="img-fluid rounded" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" style="background: #f8f9fa;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2>Projects</h2>
+      </div>
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <div class="p-3 bg-white rounded shadow">
+            <h5>Stadium Seat Booking</h5>
+            <p>Advanced Java, JDBC, MySQL</p>
+            <a href="https://github.com/bhaveshshahane/Stadium-Seat-Booking" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="p-3 bg-white rounded shadow">
+            <h5>Library Management System</h5>
+            <p>MERN Stack Project</p>
+            <a href="https://github.com/bhaveshshahane/Library-Management-System" target="_blank">GitHub</a>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4">
+          <div class="p-3 bg-white rounded shadow">
+            <h5>Hindi News Website</h5>
+            <p>PHP, MySQL, Bootstrap</p>
+            <a href="https://github.com/bhaveshshahane/Khabarilal-News-Website" target="_blank">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container text-center">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:shahanebhavesh04@gmail.com">shahanebhavesh04@gmail.com</a></p>
+      <div class="d-flex justify-content-center gap-3 fs-4 mt-3">
+        <a href="https://www.instagram.com/bhavesh_shahane" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/bhaveshshahane" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/bhavesh-shahane-865724262" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-3 bg-dark text-white">
+    © 2025 Bhavesh Shahane. All Rights Reserved.
+  </footer>
+
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <!-- GSAP Animations -->
+  <script>
+    window.addEventListener("load", () => {
+      gsap.from("#heroText", {
+        duration: 1.2,
+        opacity: 0,
+        y: -50,
+        ease: "bounce"
+      });
+      gsap.from("#heroSub", {
+        duration: 1,
+        delay: 0.5,
+        opacity: 0,
+        y: 30
+      });
+      gsap.from("nav a", {
+        duration: 1,
+        stagger: 0.2,
+        opacity: 0,
+        y: -20
+      });
+      gsap.from("section", {
+        scrollTrigger: {
+          trigger: "section",
+          start: "top bottom"
+        },
+        duration: 1,
+        opacity: 0,
+        y: 50,
+        stagger: 0.3
+      });
+    });
+  </script>
+
+</body>
 </html>
