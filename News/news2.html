@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <title>સુરત સમાચાર — આજ અને કાલના</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: Arial, sans-serif; background: #f2f2f2; padding: 20px; }
+    h2 { color: #333; }
+    .news-item { margin-bottom: 20px; padding:15px; background:white; border-radius:8px; box-shadow:0 2px 4px rgba(0,0,0,0.1); }
+    .news-item a { text-decoration:none; color:#0066cc; font-weight:bold; font-size:16px; }
+    .news-date { font-size:12px; color:#777; margin-top: 5px; }
+  </style>
+</head>
+<body>
+  <h2>📰 સુરત શહેરના સમાચાર — આજ અને કાલના</h2>
+  <div id="news">સમાચાર લોડ થઈ રહ્યા છે...</div>
+
+  <script>
+    const rssUrl = "https://news.google.com/rss/search?q=Surat&hl=gu&gl=IN&ceid=IN:gu";
+    const proxy = "https://api.allorigins.win/raw?url=" + encodeURIComponent(rssUrl);
+    const container = document.getElementById("news");
+
+    function formatDate(pubDate) {
+      const date = new Date(pubDate);
+      return date.toLocaleString("gu-IN", {
+        year: "numeric", month: "short", day: "numeric",
+        hour: "2-digit", minute: "2-digit"
+      });
+    }
+
+    function isTodayOrYesterday(pubDate) {
+      const newsDate = new Date(pubDate);
+      const now = new Date();
+
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const yesterday = new Date(today);
+      yesterday.setDate(today.getDate() - 1);
+
+      const compareDate = new Date(newsDate.getFullYear(), newsDate.getMonth(), newsDate.getDate());
+      return compareDate.getTime() === today.getTime() || compareDate.getTime() === yesterday.getTime();
+    }
+
+    function loadNews() {
+      container.innerHTML = "<p>🔄 સમાચાર લોડ થઈ રહ્યા છે...</p>";
+      fetch(proxy)
+        .then(response => response.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then(data => {
+          let items = Array.from(data.querySelectorAll("item")).filter(item => {
+            const pubDate = item.querySelector("pubDate")?.textContent;
+            return pubDate && isTodayOrYesterday(pubDate);
+          });
+
+          // Sort by date descending
+          items.sort((a, b) => {
+            return new Date(b.querySelector("pubDate").textContent) - new Date(a.querySelector("pubDate").textContent);
+          });
+
+          if (!items.length) {
+            container.innerHTML = "<p>❌ આજ અથવા કાલના કોઈ સમાચાર મળ્યા નથી.</p>";
+            return;
+          }
+
+          let html = "";
+          items.forEach(item => {
+            const title = item.querySelector("title")?.textContent;
+            const link = item.querySelector("link")?.textContent;
+            const pubDate = item.querySelector("pubDate")?.textContent;
+
+            html += `
+              <div class="news-item">
+                <a href="${link}" target="_blank">${title}</a>
+                ${pubDate ? `<div class="news-date">🕒 ${formatDate(pubDate)}</div>` : ""}
+              </div>
+            `;
+          });
+
+          container.innerHTML = html;
+        })
+        .catch(err => {
+          console.error("Error loading news:", err);
+          container.innerHTML = "<p>❌ સમાચાર લોડ કરવામાં નિષ્ફળતા.</p>";
+          
+          setTimeout(()=>{
+            window.location.reload();
+          },1000);
+        });
+    }
+
+    loadNews();
+    setInterval(loadNews, 60000); // Refresh every 1 minute
+  </script>
+</body>
+</html>

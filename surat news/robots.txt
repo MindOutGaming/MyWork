@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://surat-news.netlify.app/sitemap.xml

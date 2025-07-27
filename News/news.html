@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Surat News Feed</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #f2f2f2;
+      padding: 20px;
+    }
+    h2 {
+      color: #333;
+    }
+    .news-item {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 10px;
+    }
+    .news-item img {
+      width: 120px;
+      height: auto;
+      border-radius: 5px;
+      object-fit: cover;
+    }
+    .news-content a {
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .news-city {
+      font-size: 14px;
+      color: #777;
+    }
+    .news-date {
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📰 Surat News (City Feed, refreshed every 1 min)</h2>
+  <div id="news">Loading news...</div>
+
+  <script>
+    const city = "surat";
+    const rssUrl = `https://www.gujaratsamachar.com/rss/city/${city}`;
+    const proxy = "https://api.codetabs.com/v1/proxy/?quest=" + encodeURIComponent(rssUrl);
+    const container = document.getElementById("news");
+
+    const defaultImage = "./default.webp";
+
+    function formatDate(pubDate) {
+      const date = new Date(pubDate);
+      return date.toLocaleDateString("gu-IN", {
+        year: "numeric", month: "short", day: "numeric",
+        hour: "2-digit", minute: "2-digit"
+      });
+    }
+
+    function loadNews() {
+      container.innerHTML = "<p>🔄 Loading...</p>";
+
+      fetch(proxy)
+        .then(res => res.text())
+        .then(text => new DOMParser().parseFromString(text, "application/xml"))
+        .then(xml => {
+          const items = xml.querySelectorAll("item");
+          if (!items.length) {
+            container.innerHTML = "<p>No Surat news found.</p>";
+            return;
+          }
+
+          let html = "";
+          items.forEach(item => {
+            const title = item.querySelector("title")?.textContent;
+            const link = item.querySelector("link")?.textContent;
+            const desc = item.querySelector("description")?.textContent || "";
+            const pubDate = item.querySelector("pubDate")?.textContent;
+            const dateText = pubDate ? formatDate(pubDate) : "";
+
+            const imgMatch = desc.match(/<img[^>]+src="([^">]+)"/);
+            const img = imgMatch ? imgMatch[1] : defaultImage;
+
+            html += `
+              <div class="news-item">
+                <img src="${img}" alt="News Image" onerror="this.onerror=null;this.src='${defaultImage}'">
+                <div class="news-content">
+                  <a href="${link}" target="_blank">${title}</a>
+                  <div class="news-city">📍 Surat</div>
+                  <div class="news-date">🕒 ${dateText}</div>
+                </div>
+              </div>`;
+          });
+
+          container.innerHTML = html;
+        })
+        .catch(err => {
+          console.error("Error loading city feed:", err);
+          container.innerHTML = "<p>❌ Failed to load news.</p>";
+        });
+    }
+
+    loadNews();
+    setInterval(loadNews, 60000);
+  </script>
+
+</body>
+</html>

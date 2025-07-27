@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>સુરત સમાચાર - ગુજરાતી ન્યૂઝ</title>
+  <meta name="description" content="સુરત શહેરના  તાજા સમાચાર ગુજરાતીમાં વાંચો. અહીં તમને મળી રહેશે સુરતની ન્યૂઝ સૌથી ઝડપી અને આધારીત સૂત્રો પરથી.">
+  <meta name="keywords" content="Surat News, Surat Samachar, સુરત સમાચાર, Gujarat News, Gujarati News, Today Surat News, Local News Surat">
+  <meta name="title" content="સુરત સમાચાર - ગુજરાતી ન્યૂઝ">
+
+  <!-- Open Graph Tags -->
+  <meta property="og:title" content="સુરત સમાચાર - ગુજરાતી ન્યૂઝ" />
+  <meta property="og:description" content="સુરત શહેરના તાજા સમાચાર ગુજરાતીમાં વાંચો." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://surat-news.netlify.app" />
+  <meta property="og:locale" content="gu_IN" />
+  <meta property="og:image" content="https://surat-news.netlify.app/assets/Suratnews.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="સુરત સમાચાર - ગુજરાતી ન્યૂઝ" />
+  <meta name="twitter:description" content="સુરત શહેરના તાજા સમાચાર ગુજરાતીમાં વાંચો." />
+  <meta name="twitter:image" content="https://surat-news.netlify.app/assets/Suratnews.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../assets/Suratnews.png" type="image/png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f3f4f6;
+    }
+    .news-card {
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8">
+
+  <div class="container mx-auto max-w-7xl">
+    <header class="text-center mb-10">
+      <h1 class="text-5xl font-extrabold text-gray-900 mb-4">સુરત શહેરના સમાચાર</h1>
+      <p class="text-xl text-gray-600"> તાજા સમાચાર - ગુજરાતી ભાષામાં</p>
+    </header>
+
+    <main id="newsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Dynamic news items will be inserted here -->
+    </main>
+  </div>
+
+  <script>
+    const rssUrl = "https://news.google.com/rss/search?q=Surat&hl=gu&gl=IN&ceid=IN:gu";
+    const proxy = "https://api.allorigins.win/raw?url=" + encodeURIComponent(rssUrl);
+    const container = document.getElementById("newsGrid");
+
+    function formatDate(pubDate) {
+      const date = new Date(pubDate);
+      return date.toLocaleString("gu-IN", {
+        year: "numeric", month: "short", day: "numeric",
+        hour: "2-digit", minute: "2-digit"
+      });
+    }
+
+    function isTodayOrYesterday(pubDate) {
+      const newsDate = new Date(pubDate);
+      const now = new Date();
+
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const yesterday = new Date(today);
+      yesterday.setDate(today.getDate() - 1);
+
+      const compareDate = new Date(newsDate.getFullYear(), newsDate.getMonth(), newsDate.getDate());
+      return compareDate.getTime() === today.getTime() || compareDate.getTime() === yesterday.getTime();
+    }
+
+    function loadNews() {
+      container.innerHTML = "<p class='col-span-full text-center text-gray-500 text-lg'>🔄 સમાચાર લોડ થઈ રહ્યા છે...</p>";
+      fetch(proxy)
+        .then(response => response.text())
+        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+        .then(data => {
+          let items = Array.from(data.querySelectorAll("item")).filter(item => {
+            const pubDate = item.querySelector("pubDate")?.textContent;
+            return pubDate && isTodayOrYesterday(pubDate);
+          });
+
+          // Sort newest first
+          items.sort((a, b) => {
+            return new Date(b.querySelector("pubDate").textContent) - new Date(a.querySelector("pubDate").textContent);
+          });
+
+          if (!items.length) {
+            container.innerHTML = "<p class='col-span-full text-center text-red-500'>❌ આજ અથવા કાલના કોઈ સમાચાર મળ્યા નથી.</p>";
+            return;
+          }
+
+          const html = items.map(item => {
+            const title = item.querySelector("title")?.textContent || "સમાચાર ઉપલબ્ધ નથી";
+            const link = item.querySelector("link")?.textContent || "#";
+            const pubDate = item.querySelector("pubDate")?.textContent;
+
+            return `
+              <div class="bg-white rounded-lg shadow-md p-6 news-card">
+                <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">સુરત સમાચાર</span>
+                <h2 class="text-xl font-bold text-gray-900 mb-2">
+                  <a href="${link}" target="_blank" class="hover:underline text-blue-700">${title}</a>
+                </h2>
+                ${pubDate ? `<div class="text-sm text-gray-500 mb-2">🕒 ${formatDate(pubDate)}</div>` : ""}
+                <a href="${link}" target="_blank" class="text-sm text-indigo-600 hover:underline">વધુ વાંચો</a>
+              </div>
+            `;
+          }).join("");
+
+          container.innerHTML = html;
+        })
+        .catch(err => {
+          console.error("Error loading news:", err);
+          container.innerHTML = "<p class='col-span-full text-center text-red-600'>❌ સમાચાર લોડ કરવામાં નિષ્ફળતા.</p>";
+          setTimeout(() => {
+            window.location.reload();
+          }, 1000);
+        });
+    }
+
+    loadNews();
+    setInterval(loadNews, 60000); // Refresh every 1 minute
+  </script>
+</body>
+</html>

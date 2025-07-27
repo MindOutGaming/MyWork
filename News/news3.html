@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+        }
+        .news-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="container mx-auto max-w-7xl">
+        <header class="text-center mb-10">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Daily Digest</h1>
+            <p class="text-xl text-gray-600">Your source for the latest headlines and in-depth stories.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                <img src="https://source.unsplash.com/random/400x250?news,technology" alt="Technology News" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Technology</span>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Breakthrough in AI Robotics Achieved</h2>
+                    <p class="text-gray-700 text-base mb-4">Scientists have announced a significant leap forward in autonomous robotics, promising a new era of automation and innovation.</p>
+                    <div class="flex items-center justify-between text-sm text-gray-500">
+                        <span>July 26, 2025</span>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold">Read more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                <img src="https://source.unsplash.com/random/400x250?news,sports" alt="Sports News" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Sports</span>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Local Team Secures Championship Title</h2>
+                    <p class="text-gray-700 text-base mb-4">In a thrilling final match, the home team emerged victorious, clinching the national championship in an unforgettable performance.</p>
+                    <div class="flex items-center justify-between text-sm text-gray-500">
+                        <span>July 25, 2025</span>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold">Read more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                <img src="https://source.unsplash.com/random/400x250?news,finance" alt="Finance News" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Finance</span>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Global Markets Show Resilience Amidst Uncertainty</h2>
+                    <p class="text-gray-700 text-base mb-4">Despite recent economic headwinds, global stock markets are demonstrating surprising resilience, signaling investor confidence.</p>
+                    <div class="flex items-center justify-between text-sm text-gray-500">
+                        <span>July 24, 2025</span>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold">Read more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                <img src="https://source.unsplash.com/random/400x250?news,health" alt="Health News" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="inline-block bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Health</span>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">New Study Reveals Benefits of Mediterranean Diet</h2>
+                    <p class="text-gray-700 text-base mb-4">A comprehensive study has confirmed the long-term health benefits of adhering to a Mediterranean dietary pattern.</p>
+                    <div class="flex items-center justify-between text-sm text-gray-500">
+                        <span>July 23, 2025</span>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold">Read more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                <img src="https://source.unsplash.com/random/400x250?news,environment" alt="Environment News" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Environment</span>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Global Efforts to Combat Climate Change Intensify</h2>
+                    <p class="text-gray-700 text-base mb-4">Nations worldwide are increasing their commitment to sustainable practices and renewable energy sources.</p>
+                    <div class="flex items-center justify-between text-sm text-gray-500">
+                        <span>July 22, 2025</span>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold">Read more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden news-card">
+                <img src="https://source.unsplash.com/random/400x250?news,art" alt="Art News" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <span class="inline-block bg-pink-100 text-pink-800 text-xs font-semibold px-2.5 py-0.5 rounded-full mb-2">Culture</span>
+                    <h2 class="text-2xl font-bold text-gray-900 mb-3">Renowned Artist Unveils New Masterpiece</h2>
+                    <p class="text-gray-700 text-base mb-4">A celebrated artist has just revealed their latest work, sparking critical acclaim and public admiration.</p>
+                    <div class="flex items-center justify-between text-sm text-gray-500">
+                        <span>July 21, 2025</span>
+                        <a href="#" class="text-blue-600 hover:underline font-semibold">Read more &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>
